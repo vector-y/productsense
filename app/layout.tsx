@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Navbar } from "./components/nav";
 
 // Primary font: Kyoto
 const kyoto = localFont({
@@ -55,6 +56,7 @@ export default function RootLayout({
       <body
         className={`${kyoto.variable} ${inter.variable} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
