@@ -55,7 +55,7 @@ export function AnalysisSection({ id, title, subtitle, insights, logos }: Analys
 				)}
 
 				{/* Insights Grid */}
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
 					{insights.map((insight, index) => (
 						<InsightCard
 							key={index}
@@ -65,35 +65,6 @@ export function AnalysisSection({ id, title, subtitle, insights, logos }: Analys
 							index={index}
 						/>
 					))}
-				</div>
-
-				{/* Additional Context Section */}
-				<div className="mt-16 lg:mt-24 pt-16 lg:pt-24 border-t border-neutral-200">
-					<div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-						<div>
-							<div className="text-neutral-700 mb-3">Approach</div>
-							<p className="text-neutral-700">
-								This analysis draws from studying 50+ leading products across consumer and enterprise spaces,
-								identifying patterns that consistently drive user success.
-							</p>
-						</div>
-
-						<div>
-							<div className="text-neutral-700 mb-3">Methodology</div>
-							<p className="text-neutral-700">
-								Each insight is backed by user testing, behavioral analytics, and qualitative interviews
-								to understand both what works and why it works.
-							</p>
-						</div>
-
-						<div>
-							<div className="text-neutral-700 mb-3">Impact</div>
-							<p className="text-neutral-700">
-								These principles have been applied to improve conversion rates by 40%+ and reduce
-								time-to-value by more than half in real-world implementations.
-							</p>
-						</div>
-					</div>
 				</div>
 			</div>
 		</section>
