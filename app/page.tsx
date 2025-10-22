@@ -1,9 +1,61 @@
+import { Hero } from './components/Hero';
+import { AnalysisSection } from './components/AnalysisSection';
+import { Footer } from './components/Footer';
+
 export default function Home() {
 	return (
-		<main className="flex min-h-screen items-start justify-center px-16 pt-32">
-			<h1 className="text-3xl font-semibold leading-10 tracking-tight text-zinc-900">
-				To get started, edit the page.tsx file.
-			</h1>
-		</main>
+		<div className="min-h-screen bg-neutral-50">
+			<Hero />
+
+			{/* Onboarding Analysis */}
+			<AnalysisSection
+				id="onboarding"
+				title="Onboarding Experiences"
+				subtitle="Analyzing how products introduce and guide new users through their first interactions"
+				insights={[
+					{
+						title: "Progressive Disclosure",
+						description: "Effective onboarding reveals features incrementally, preventing cognitive overload while building user confidence through early wins.",
+						annotation: "Key Insight"
+					},
+					{
+						title: "Contextual Guidance",
+						description: "The best experiences provide help at the moment of need, embedding educational content within the natural user flow rather than separate tutorials.",
+						annotation: "Best Practice"
+					},
+					{
+						title: "Value Before Friction",
+						description: "Leading products demonstrate core value before asking for user commitment, flipping the traditional sign-up first model.",
+						annotation: "Pattern"
+					}
+				]}
+			/>
+
+			{/* Search & Browsing Analysis */}
+			<AnalysisSection
+				id="search-browsing"
+				title="Search & Browsing Experiences"
+				subtitle="Understanding how users discover and navigate content in modern digital products"
+				insights={[
+					{
+						title: "Hybrid Discovery",
+						description: "Modern interfaces blend structured navigation with intelligent search, recognizing that users don't always know what they're looking for.",
+						annotation: "Trend"
+					},
+					{
+						title: "Visual Scanning Patterns",
+						description: "Successful designs optimize for F-pattern and Z-pattern reading behaviors, placing critical information where eyes naturally land.",
+						annotation: "Research Finding"
+					},
+					{
+						title: "Smart Defaults",
+						description: "Great search experiences anticipate user intent with contextual suggestions, recent history, and popular queries before any input.",
+						annotation: "UX Pattern"
+					}
+				]}
+			/>
+
+			<Footer />
+		</div>
 	);
 }
