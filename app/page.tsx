@@ -4,7 +4,7 @@ import { Footer } from './components/Footer';
 
 export default function Home() {
 	return (
-		<div className="min-h-screen bg-neutral-50">
+		<div className="min-h-screen bg-background">
 			<Hero />
 
 			{/* Onboarding Analysis */}
@@ -12,6 +12,11 @@ export default function Home() {
 				id="onboarding"
 				title="Onboarding Experiences"
 				subtitle="Analyzing how products introduce and guide new users through their first interactions"
+				logos={[
+					{ name: 'Venmo', src: '/venmo.png' },
+					{ name: 'Instagram', src: '/instagram.png' },
+					{ name: 'Notion', src: '/notion.png' }
+				]}
 				insights={[
 					{
 						title: "Progressive Disclosure",
@@ -36,6 +41,11 @@ export default function Home() {
 				id="search-browsing"
 				title="Search & Browsing Experiences"
 				subtitle="Understanding how users discover and navigate content in modern digital products"
+				logos={[
+					{ name: 'Netflix', src: '/netflix.png' },
+					{ name: 'YouTube', src: '/youtube.png' },
+					{ name: 'Airbnb', src: '/airbnb.png' }
+				]}
 				insights={[
 					{
 						title: "Hybrid Discovery",
