@@ -8,7 +8,7 @@ export function Footer() {
 						<div className="tracking-tight text-neutral-900">
 							Building Your Product Sense
 						</div>
-						<p className="text-neutral-500">
+						<p className="text-neutral-600">
 							A framework for understanding exceptional digital experiences
 						</p>
 					</div>
@@ -26,7 +26,7 @@ export function Footer() {
 					</div>
 				</div>
 
-				<div className="mt-12 pt-8 border-t border-neutral-200 text-neutral-400">
+				<div className="mt-12 pt-8 border-t border-neutral-200 text-neutral-700">
 					© 2025 Product Sense. Crafted with attention to detail.
 				</div>
 			</div>

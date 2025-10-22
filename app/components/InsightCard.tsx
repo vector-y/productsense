@@ -14,7 +14,7 @@ export function InsightCard({ title, description, annotation, index }: InsightCa
 
 			{/* Annotation Badge */}
 			<div className="inline-flex items-center gap-2 mb-6">
-				<span className="text-neutral-400 tabular-nums">
+				<span className="text-neutral-700 tabular-nums">
 					{String(index + 1).padStart(2, '0')}
 				</span>
 				<span className="px-3 py-1 bg-neutral-900 text-neutral-50 rounded-full inline-block">
