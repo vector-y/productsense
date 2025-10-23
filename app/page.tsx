@@ -1,6 +1,7 @@
 import { Hero } from './components/Hero';
 import { AnalysisSection } from './components/AnalysisSection';
 import { Footer } from './components/Footer';
+import { ShipProductsExample } from './components/ShipProductsAccordion.example';
 
 export default function Home() {
 	return (
@@ -35,6 +36,9 @@ export default function Home() {
 					}
 				]}
 			/>
+
+			{/* Ship Products Accordion */}
+			<ShipProductsExample />
 
 			{/* Search & Browsing Analysis */}
 			<AnalysisSection

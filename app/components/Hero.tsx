@@ -2,7 +2,7 @@
 export function Hero() {
 	return (
 		<section className="pt-32 pb-24 lg:pt-48 lg:pb-32">
-			<div className="max-w-5xl mx-auto px-6 lg:px-12">
+			<div className="max-w-7xl mx-auto px-6 lg:px-12">
 				<div className="space-y-8">
 					<h1 className="tracking-tight text-neutral-900">
 						Building Your<br />Product Sense

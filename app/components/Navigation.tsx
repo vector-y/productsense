@@ -11,7 +11,7 @@ export function Navigation() {
 
 	return (
 		<nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-neutral-200">
-			<div className="max-w-5xl mx-auto px-6 lg:px-12 py-6">
+			<div className="max-w-7xl mx-auto px-6 lg:px-12 py-6">
 				<div className="flex items-center justify-between">
 					<button
 						onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -31,7 +31,7 @@ export function Navigation() {
 							onClick={() => scrollToSection('search-browsing')}
 							className="text-neutral-600 hover:text-neutral-900 transition-colors"
 						>
-							Search & Browsing
+							Search
 						</button>
 					</div>
 				</div>

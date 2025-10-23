@@ -22,8 +22,8 @@ interface AnalysisSectionProps {
 // Analysis section component displaying insights in a grid layout
 export function AnalysisSection({ id, title, subtitle, insights, logos }: AnalysisSectionProps) {
 	return (
-		<section id={id} className="py-24 lg:py-32 border-t border-neutral-200">
-			<div className="max-w-5xl mx-auto px-6 lg:px-12">
+		<section id={id} className="pt-24 lg:pt-32 pb-16 lg:pb-16 border-t border-neutral-200">
+			<div className="max-w-7xl mx-auto px-6 lg:px-12">
 				{/* Section Header */}
 				<div className="mb-12 lg:mb-16">
 					<h2 className="mb-6 tracking-tight text-neutral-900">
