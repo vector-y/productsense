@@ -13,7 +13,7 @@ const navItems = {
 
 // Spring animation configuration for smooth motion
 const SPRING = {
-	type: "spring",
+	type: "spring" as const,
 	damping: 10,
 	mass: 0.75,
 	stiffness: 100,
