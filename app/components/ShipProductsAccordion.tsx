@@ -56,14 +56,14 @@ export function ShipProductsAccordion({
 		<section className="w-full pt-16 lg:pt-16 pb-24 lg:pb-32">
 			<div className="max-w-7xl mx-auto px-6 lg:px-12">
 				{/* Main heading */}
-				<div className="mb-12">
+				<div className="mb-6">
 					<h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900">
 						{heading}
 					</h2>
 				</div>
 
 				{/* Split Layout Container */}
-				<div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+				<div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
 
 					{/* LEFT COLUMN: Accordion */}
 					<div className="lg:pr-4">
@@ -152,7 +152,7 @@ export function ShipProductsAccordion({
 											{/* CTA Button */}
 											<a
 												href={item.ctaLink}
-												className="inline-flex items-center gap-2 px-6 py-3 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition-colors"
+												className="group inline-flex items-center gap-2 px-6 py-3 bg-neutral-900 text-white rounded-lg transition-all"
 											>
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
@@ -161,7 +161,7 @@ export function ShipProductsAccordion({
 													fill="none"
 													viewBox="0 0 24 24"
 													aria-hidden="true"
-													className="flex-shrink-0"
+													className="flex-shrink-0 transition-transform group-hover:translate-x-1"
 												>
 													<path
 														fill="currentColor"
@@ -194,37 +194,39 @@ export function ShipProductsAccordion({
 					</div>
 
 					{/* RIGHT COLUMN: Persistent Image (Desktop Only) */}
-					<div className="hidden lg:block lg:sticky lg:top-24 lg:h-fit">
-						{/* Screen Reader Announcement */}
-						<div className="sr-only" role="status" aria-live="polite">
+					<div className="hidden lg:flex lg:flex-col">
+						<div className="lg:sticky lg:top-8 lg:h-fit">
+							{/* Screen Reader Announcement */}
+							<div className="sr-only" role="status" aria-live="polite">
 							Now showing: {activeItem.image.alt}
-						</div>
+							</div>
 
-						{/* Image Container with Animation */}
-						<div className="rounded-lg overflow-hidden bg-neutral-100 aspect-[908/726]">
-							<AnimatePresence mode="wait">
-								<motion.div
-									key={activeItem.id}
-									initial={{ opacity: 0, scale: 0.98 }}
-									animate={{ opacity: 1, scale: 1 }}
-									exit={{ opacity: 0, scale: 0.98 }}
-									transition={{
-										duration: 0.3,
-										ease: [0.22, 1, 0.36, 1]
-									}}
-									className="w-full h-full"
-								>
-									<Image
-										src={activeItem.image.src}
-										alt={activeItem.image.alt}
-										width={908}
-										height={726}
-										sizes="(min-width: 1024px) 50vw, 100vw"
-										className="w-full h-full object-cover"
-										priority
-									/>
-								</motion.div>
-							</AnimatePresence>
+							{/* Image Container with Animation */}
+							<div className="rounded-lg overflow-hidden bg-neutral-100 max-w-sm max-h-[700px] mx-auto">
+								<AnimatePresence mode="wait">
+									<motion.div
+										key={activeItem.id}
+										initial={{ opacity: 0, scale: 0.98 }}
+										animate={{ opacity: 1, scale: 1 }}
+										exit={{ opacity: 0, scale: 0.98 }}
+										transition={{
+											duration: 0.3,
+											ease: [0.22, 1, 0.36, 1]
+										}}
+										className="w-full h-full"
+									>
+										<Image
+											src={activeItem.image.src}
+											alt={activeItem.image.alt}
+											width={908}
+											height={726}
+											sizes="(min-width: 1024px) 50vw, 100vw"
+											className="w-full h-full object-contain object-top"
+											priority
+										/>
+									</motion.div>
+								</AnimatePresence>
+							</div>
 						</div>
 					</div>
 				</div>

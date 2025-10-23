@@ -22,7 +22,7 @@ export function Hero() {
 					{/* CTA Modal */}
 					<Dialog.Root>
 						<Dialog.Trigger asChild>
-							<button className="bg-neutral-900 text-white px-6 py-3 rounded-lg hover:opacity-90 transition-opacity">
+							<button className="bg-neutral-900 text-white px-6 py-3 rounded-lg hover:opacity-90 transition-opacity cursor-pointer">
 								Get Started
 							</button>
 						</Dialog.Trigger>

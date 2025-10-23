@@ -1,55 +1,86 @@
 /**
  * Example usage of ShipProductsAccordion component
- * This file demonstrates how to use the accordion with Figma's product data
+ * This file demonstrates how to use the accordion with onboarding and search/browsing experiences
  */
 
-import { ShipProductsAccordion, FigmaIcon, SitesIcon, MakeIcon } from './ShipProductsAccordion';
+import Image from 'next/image';
+import { ShipProductsAccordion } from './ShipProductsAccordion';
 
 export function ShipProductsExample() {
-	// Example data structure matching the original HTML
+	// Example data structure for onboarding experiences
 	const accordionItems = [
 		{
-			id: 'figma-mcp',
-			icon: <FigmaIcon />,
-			title: 'Turn Figma context into code',
-			description: "Our Figma MCP server lets you bring Figma context directly into your agentic coding tools.",
-			ctaText: 'Explore Figma MCP',
-			ctaLink: 'https://www.figma.com/dev-mode/',
+			id: 'venmo',
+			icon: (
+				<Image
+					src="/venmo.png"
+					alt="Venmo logo"
+					width={152}
+					height={152}
+					sizes="128px"
+					className="w-6 h-6 object-contain"
+					quality={100}
+				/>
+			),
+			title: 'Venmo',
+			description: "Streamline your payment onboarding with intuitive social payment features. Connect with friends, split bills, and send money seamlessly from day one.",
+			ctaText: 'Explore Venmo Onboarding',
+			ctaLink: '/onboarding',
 			image: {
-				src: 'https://cdn.sanity.io/images/599r6htc/regionalized/24e122cd8a5089bd145f3fd46a35554bae2780b4-1560x1248.png',
-				alt: 'colab profile with design system updates and prompt',
-				width: 908,
-				height: 726,
+				src: '/Onboarding/Venmo/Venmo (iOS).png',
+				alt: 'Venmo onboarding experience',
+				width: 2340,
+				height: 5064,
 				sizes: 'calc(100vw - 24px), (min-width: 560px) 736px, (min-width: 960px) 720px, (min-width: 1920px) 908px'
 			}
 		},
 		{
-			id: 'figma-sites',
-			icon: <SitesIcon />,
-			title: 'Publish custom websites—with or without code',
-			description: 'Design responsive websites in Figma Sites, then tweak with code or AI until everything is just right.',
-			ctaText: 'Explore Figma Sites',
-			ctaLink: 'https://www.figma.com/sites/',
+			id: 'instagram',
+			icon: (
+				<Image
+					src="/instagram.png"
+					alt="Instagram logo"
+					width={304}
+					height={304}
+					sizes="128px"
+					className="w-6 h-6 object-contain"
+					quality={100}
+				/>
+			),
+			title: 'Instagram',
+			description: 'Create engaging onboarding flows that help users discover, share, and connect. Build your community with personalized recommendations and an intuitive profile setup.',
+			ctaText: 'Explore Instagram Onboarding',
+			ctaLink: '/onboarding',
 			image: {
-				src: 'https://cdn.sanity.io/images/599r6htc/regionalized/969d0fb681b2dfa08c6028611ded150d6df5595e-1560x1248.png',
-				alt: 'library of prototypes',
-				width: 908,
-				height: 726,
+				src: '/Onboarding/Instagram/Instagram (iOS).png',
+				alt: 'Instagram onboarding experience',
+				width: 2358,
+				height: 5112,
 				sizes: 'calc(100vw - 24px), (min-width: 560px) 736px, (min-width: 960px) 720px, (min-width: 1920px) 908px'
 			}
 		},
 		{
-			id: 'figma-make',
-			icon: <MakeIcon />,
-			title: 'Ship products faster with AI',
-			description: 'Drop a design file into Figma Make and chat with AI to quickly create a live, functional app.',
-			ctaText: 'Explore Figma Make',
-			ctaLink: 'https://www.figma.com/make/',
+			id: 'notion',
+			icon: (
+				<Image
+					src="/notion.png"
+					alt="Notion logo"
+					width={304}
+					height={304}
+					sizes="128px"
+					className="w-6 h-6 object-contain"
+					quality={100}
+				/>
+			),
+			title: 'Notion',
+			description: 'Guide users through a powerful workspace setup with templates, collaborative features, and organizational tools. Make productivity accessible from the first login.',
+			ctaText: 'Explore Notion Onboarding',
+			ctaLink: '/onboarding',
 			image: {
-				src: 'https://cdn.sanity.io/images/599r6htc/regionalized/d067ab6e66615f0d82b1878ccf20126024ff48f7-1560x1249.png',
-				alt: 'slides preview with iphone',
-				width: 908,
-				height: 727,
+				src: '/Onboarding/Notion/Notion (iOS).png',
+				alt: 'Notion onboarding experience',
+				width: 2358,
+				height: 5112,
 				sizes: 'calc(100vw - 24px), (min-width: 560px) 736px, (min-width: 960px) 720px, (min-width: 1920px) 908px'
 			}
 		}
@@ -57,9 +88,98 @@ export function ShipProductsExample() {
 
 	return (
 		<ShipProductsAccordion
-			heading="Ship products, any way you want"
+			heading="Onboarding Experiences"
 			items={accordionItems}
-			defaultValue="figma-mcp" // First item expanded by default
+			defaultValue="venmo" // First item expanded by default
+		/>
+	);
+}
+
+export function SearchBrowsingExample() {
+	// Example data structure for search & browsing experiences
+	const accordionItems = [
+		{
+			id: 'netflix',
+			icon: (
+				<Image
+					src="/netflix.png"
+					alt="Netflix logo"
+					width={152}
+					height={152}
+					sizes="128px"
+					className="w-6 h-6 object-contain"
+					quality={100}
+				/>
+			),
+			title: 'Netflix',
+			description: 'Discover how Netflix creates personalized browsing experiences with algorithmic recommendations, intuitive categories, and seamless content discovery that keeps users engaged.',
+			ctaText: 'Explore Netflix Search',
+			ctaLink: '/search',
+			image: {
+				src: '/Search/Netflix/Netflix (iOS).png',
+				alt: 'Netflix search and browsing experience',
+				width: 2358,
+				height: 5112,
+				sizes: 'calc(100vw - 24px), (min-width: 560px) 736px, (min-width: 960px) 720px, (min-width: 1920px) 908px'
+			}
+		},
+		{
+			id: 'youtube',
+			icon: (
+				<Image
+					src="/youtube.png"
+					alt="YouTube logo"
+					width={152}
+					height={152}
+					sizes="128px"
+					className="w-6 h-6 object-contain"
+					quality={100}
+				/>
+			),
+			title: 'YouTube',
+			description: 'Explore YouTube\'s powerful search capabilities combined with personalized recommendations, trending content, and an endless feed that adapts to user preferences.',
+			ctaText: 'Explore YouTube Search',
+			ctaLink: '/search',
+			image: {
+				src: '/Search/YouTube/YouTube (iOS).png',
+				alt: 'YouTube search and browsing experience',
+				width: 2358,
+				height: 5112,
+				sizes: 'calc(100vw - 24px), (min-width: 560px) 736px, (min-width: 960px) 720px, (min-width: 1920px) 908px'
+			}
+		},
+		{
+			id: 'airbnb',
+			icon: (
+				<Image
+					src="/airbnb.png"
+					alt="Airbnb logo"
+					width={152}
+					height={152}
+					sizes="128px"
+					className="w-6 h-6 object-contain"
+					quality={100}
+				/>
+			),
+			title: 'Airbnb',
+			description: 'Experience Airbnb\'s location-based search with rich filters, map integration, and detailed property browsing that helps users find their perfect stay.',
+			ctaText: 'Explore Airbnb Search',
+			ctaLink: '/search',
+			image: {
+				src: '/Search/Airbnb/Airbnb (iOS).png',
+				alt: 'Airbnb search and browsing experience',
+				width: 2360,
+				height: 5112,
+				sizes: 'calc(100vw - 24px), (min-width: 560px) 736px, (min-width: 960px) 720px, (min-width: 1920px) 908px'
+			}
+		}
+	];
+
+	return (
+		<ShipProductsAccordion
+			heading="Search & Browsing Experiences"
+			items={accordionItems}
+			defaultValue="netflix" // First item expanded by default
 		/>
 	);
 }
