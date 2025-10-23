@@ -113,10 +113,16 @@ export function ShipProductsAccordion({
 													{item.icon}
 												</motion.div>
 
-												{/* Title - shifts right when icon is visible */}
+												{/* Title - shifts right when icon is visible, rises when active */}
 												<motion.span
 													className="text-xl md:text-2xl font-semibold text-neutral-900 flex-1"
-													animate={isVisible ? { x: 0 } : { x: -32 }}
+													animate={
+														activeValue === item.id
+															? { x: 0, y: -4 }
+															: isVisible
+															? { x: 0, y: 0 }
+															: { x: -32, y: 0 }
+													}
 													transition={{
 														duration: 0.4,
 														ease: [0.22, 1, 0.36, 1]
@@ -129,7 +135,15 @@ export function ShipProductsAccordion({
 
 									{/* Accordion Content */}
 									<Accordion.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-										<div className="pt-6 pl-9 space-y-6">
+										<motion.div
+											className="pt-6 pl-9 space-y-6"
+											initial={{ opacity: 0, y: 20 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{
+												duration: 0.4,
+												ease: [0.22, 1, 0.36, 1]
+											}}
+										>
 											{/* Description */}
 											<p className="text-lg text-neutral-600 leading-relaxed max-w-3xl">
 												{item.description}
@@ -171,7 +185,7 @@ export function ShipProductsAccordion({
 													loading={items.indexOf(item) === 0 ? "eager" : "lazy"}
 												/>
 											</div>
-										</div>
+										</motion.div>
 									</Accordion.Content>
 								</Accordion.Item>
 							);
