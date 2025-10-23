@@ -46,6 +46,9 @@ export function ShipProductsAccordion({
 		defaultValue || items[0]?.id
 	);
 
+	// Track hovered item for icon animations
+	const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+
 	// Derive active item for persistent image display
 	const activeItem = items.find(item => item.id === activeValue) || items[0];
 
@@ -74,26 +77,55 @@ export function ShipProductsAccordion({
 							}}
 							className="space-y-4"
 						>
-							{items.map((item) => (
-								<Accordion.Item
-									key={item.id}
-									value={item.id}
-									className="border-b border-neutral-200 pb-4"
-								>
-									{/* Accordion Trigger (Button) */}
-									<Accordion.Header>
-										<Accordion.Trigger className="group flex w-full items-start gap-3 text-left transition-all hover:opacity-80">
-											{/* Icon */}
-											<div className="flex-shrink-0 w-6 h-6 text-neutral-900">
-												{item.icon}
-											</div>
+							{items.map((item, index) => {
+								// Determine if icon should be visible (hovered or active)
+								const isVisible = hoveredItem === item.id || activeValue === item.id;
+								const isHovered = hoveredItem === item.id;
 
-											{/* Title */}
-											<span className="text-xl md:text-2xl font-semibold text-neutral-900 flex-1">
-												{item.title}
-											</span>
-										</Accordion.Trigger>
-									</Accordion.Header>
+								return (
+									<Accordion.Item
+										key={item.id}
+										value={item.id}
+										className="border-b border-neutral-200 pb-4"
+									>
+										{/* Accordion Trigger (Button) */}
+										<Accordion.Header>
+											<Accordion.Trigger
+												className="group flex w-full items-center gap-3 text-left transition-all overflow-hidden relative"
+												onMouseEnter={() => setHoveredItem(item.id)}
+												onMouseLeave={() => setHoveredItem(null)}
+											>
+												{/* Icon - spins in place, persists when active */}
+												<motion.div
+													className="flex-shrink-0 w-6 h-6 text-neutral-900"
+													animate={isVisible ? {
+														scale: 1,
+														rotate: (isHovered && activeValue !== item.id) ? (index % 2 === 0 ? 360 : -360) : 0
+													} : {
+														scale: 0,
+														rotate: 0
+													}}
+													transition={{
+														duration: (isHovered && activeValue !== item.id) ? 0.6 : 0,
+														ease: [0.22, 1, 0.36, 1]
+													}}
+												>
+													{item.icon}
+												</motion.div>
+
+												{/* Title - shifts right when icon is visible */}
+												<motion.span
+													className="text-xl md:text-2xl font-semibold text-neutral-900 flex-1"
+													animate={isVisible ? { x: 0 } : { x: -32 }}
+													transition={{
+														duration: 0.4,
+														ease: [0.22, 1, 0.36, 1]
+													}}
+												>
+													{item.title}
+												</motion.span>
+											</Accordion.Trigger>
+										</Accordion.Header>
 
 									{/* Accordion Content */}
 									<Accordion.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
@@ -142,7 +174,8 @@ export function ShipProductsAccordion({
 										</div>
 									</Accordion.Content>
 								</Accordion.Item>
-							))}
+							);
+							})}
 						</Accordion.Root>
 					</div>
 
