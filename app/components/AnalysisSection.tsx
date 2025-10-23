@@ -15,7 +15,7 @@ interface AnalysisSectionProps {
 	id: string;
 	title: string;
 	subtitle: string;
-	insights: Insight[];
+	insights?: Insight[];
 	logos?: Logo[];
 }
 
@@ -55,17 +55,19 @@ export function AnalysisSection({ id, title, subtitle, insights, logos }: Analys
 				)}
 
 				{/* Insights Grid */}
-				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-					{insights.map((insight, index) => (
-						<InsightCard
-							key={index}
-							title={insight.title}
-							description={insight.description}
-							annotation={insight.annotation}
-							index={index}
-						/>
-					))}
-				</div>
+				{insights && insights.length > 0 && (
+					<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+						{insights.map((insight, index) => (
+							<InsightCard
+								key={index}
+								title={insight.title}
+								description={insight.description}
+								annotation={insight.annotation}
+								index={index}
+							/>
+						))}
+					</div>
+				)}
 			</div>
 		</section>
 	);

@@ -1,4 +1,9 @@
-// Hero section component
+'use client';
+
+import * as Dialog from '@radix-ui/react-dialog';
+import Link from 'next/link';
+
+// Hero section component with CTA modal
 export function Hero() {
 	return (
 		<section className="pt-32 pb-24 lg:pt-48 lg:pb-32">
@@ -13,6 +18,58 @@ export function Hero() {
 						delightful, and effective. Exploring two critical areas where product sense makes
 						the difference between good and exceptional.
 					</p>
+
+					{/* CTA Modal */}
+					<Dialog.Root>
+						<Dialog.Trigger asChild>
+							<button className="bg-neutral-900 text-white px-6 py-3 rounded-lg hover:opacity-90 transition-opacity">
+								Get Started
+							</button>
+						</Dialog.Trigger>
+
+						<Dialog.Portal>
+							<Dialog.Overlay className="modal-overlay" />
+							<Dialog.Content className="modal-content">
+								<Dialog.Close asChild>
+									<button
+										className="absolute top-6 left-6 w-11 h-11 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg text-neutral-400 hover:text-neutral-900 hover:bg-neutral-100 transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2"
+										aria-label="Close dialog"
+									>
+										<svg
+											className="w-5 h-5"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+											strokeWidth={2}
+											aria-hidden="true"
+										>
+											<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+										</svg>
+									</button>
+								</Dialog.Close>
+
+								<Dialog.Title className="text-2xl font-medium text-neutral-900 mt-12 mb-6">
+									Choose Your Path
+								</Dialog.Title>
+
+								<div className="space-y-4">
+									<Link
+										href="/onboarding"
+										className="block w-full bg-neutral-900 text-white px-6 py-3 rounded-lg hover:opacity-90 transition-opacity text-center"
+									>
+										Onboarding Analysis
+									</Link>
+
+									<Link
+										href="/search"
+										className="block w-full bg-neutral-900 text-white px-6 py-3 rounded-lg hover:opacity-90 transition-opacity text-center"
+									>
+										Search & Browsing Analysis
+									</Link>
+								</div>
+							</Dialog.Content>
+						</Dialog.Portal>
+					</Dialog.Root>
 				</div>
 			</div>
 		</section>
