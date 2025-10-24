@@ -11,8 +11,6 @@ interface AccordionItemData {
 	icon: React.ReactNode;
 	title: string;
 	description: string;
-	ctaText: string;
-	ctaLink: string;
 	image: {
 		src: string;
 		alt: string;
@@ -26,6 +24,9 @@ interface AccordionItemData {
 // TypeScript interface for component props
 interface ShipProductsAccordionProps {
 	heading?: string;
+	description?: string;
+	ctaText: string;
+	ctaLink: string;
 	items: AccordionItemData[];
 	defaultValue?: string;
 }
@@ -38,6 +39,9 @@ interface ShipProductsAccordionProps {
  */
 export function ShipProductsAccordion({
 	heading = "Ship products, any way you want",
+	description,
+	ctaText,
+	ctaLink,
 	items,
 	defaultValue
 }: ShipProductsAccordionProps) {
@@ -49,17 +53,54 @@ export function ShipProductsAccordion({
 	// Track hovered item for icon animations
 	const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
+	// Track image loading state to show skeleton and prevent layout shift
+	const [imageLoaded, setImageLoaded] = useState<Record<string, boolean>>({});
+
 	// Derive active item for persistent image display
-	const activeItem = items.find(item => item.id === activeValue) || items[0];
+	const activeItem = items.find(item => item.id === activeValue)
+		?? items.find(item => item.id === defaultValue)
+		?? items[0];
 
 	return (
 		<section className="w-full pt-16 lg:pt-16 pb-24 lg:pb-32">
 			<div className="max-w-7xl mx-auto px-6 lg:px-12">
-				{/* Main heading */}
-				<div className="mb-6">
-					<h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900">
+				{/* Header Section */}
+				<div className="mb-12">
+					{/* Main heading */}
+					<h2 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-4">
 						{heading}
 					</h2>
+
+					{/* Description text */}
+					{description && (
+						<p className="text-lg text-neutral-600 leading-relaxed max-w-3xl mb-6">
+							{description}
+						</p>
+					)}
+
+					{/* CTA Button */}
+					<a
+						href={ctaLink}
+						className="group inline-flex items-center gap-2 px-6 py-3 bg-neutral-900 text-white rounded-lg transition-all hover:bg-neutral-800"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							fill="none"
+							viewBox="0 0 24 24"
+							aria-hidden="true"
+							className="flex-shrink-0 transition-transform group-hover:translate-x-1"
+						>
+							<path
+								fill="currentColor"
+								fillRule="evenodd"
+								d="M12.522 4.25 20 12l-7.478 7.75-.733-.709 6.302-6.531H4v-1.02h14.09L11.79 4.959z"
+								clipRule="evenodd"
+							/>
+						</svg>
+						<span>{ctaText}</span>
+					</a>
 				</div>
 
 				{/* Split Layout Container */}
@@ -72,8 +113,8 @@ export function ShipProductsAccordion({
 							collapsible
 							value={activeValue}
 							onValueChange={(value) => {
-								// Keep last active image visible even when accordion fully collapsed
-								if (value) setActiveValue(value);
+								// Reset to first item when collapsed, or update to selected item
+								setActiveValue(value || items[0]?.id);
 							}}
 							className="space-y-4"
 						>
@@ -149,32 +190,8 @@ export function ShipProductsAccordion({
 												{item.description}
 											</p>
 
-											{/* CTA Button */}
-											<a
-												href={item.ctaLink}
-												className="group inline-flex items-center gap-2 px-6 py-3 bg-neutral-900 text-white rounded-lg transition-all"
-											>
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													width="20"
-													height="20"
-													fill="none"
-													viewBox="0 0 24 24"
-													aria-hidden="true"
-													className="flex-shrink-0 transition-transform group-hover:translate-x-1"
-												>
-													<path
-														fill="currentColor"
-														fillRule="evenodd"
-														d="M12.522 4.25 20 12l-7.478 7.75-.733-.709 6.302-6.531H4v-1.02h14.09L11.79 4.959z"
-														clipRule="evenodd"
-													/>
-												</svg>
-												<span>{item.ctaText}</span>
-											</a>
-
 											{/* Image: Mobile/Tablet Only */}
-											<div className="lg:hidden rounded-lg overflow-hidden bg-neutral-100">
+											<div className="lg:hidden lg:opacity-0 lg:invisible rounded-lg overflow-hidden bg-neutral-100">
 												<Image
 													src={item.image.src}
 													alt={item.image.alt}
@@ -202,15 +219,23 @@ export function ShipProductsAccordion({
 							</div>
 
 							{/* Image Container with Animation */}
-							<div className="rounded-lg overflow-hidden bg-neutral-100 max-w-sm max-h-[700px] mx-auto">
-								<AnimatePresence mode="wait">
+							<div className="rounded-lg overflow-hidden bg-neutral-100 max-w-sm max-h-[700px] mx-auto relative">
+								{/* Skeleton Loader - shown while image is loading */}
+								{!imageLoaded[activeItem.id] && (
+									<div className="absolute inset-0 bg-neutral-200 animate-pulse">
+										{/* Optional: Add subtle gradient for visual interest */}
+										<div className="absolute inset-0 bg-gradient-to-br from-neutral-100/50 to-neutral-300/50" />
+									</div>
+								)}
+
+								<AnimatePresence initial={false}>
 									<motion.div
 										key={activeItem.id}
 										initial={{ opacity: 0, scale: 0.98 }}
 										animate={{ opacity: 1, scale: 1 }}
 										exit={{ opacity: 0, scale: 0.98 }}
 										transition={{
-											duration: 0.3,
+											duration: 0.45,
 											ease: [0.22, 1, 0.36, 1]
 										}}
 										className="w-full h-full"
@@ -222,7 +247,15 @@ export function ShipProductsAccordion({
 											height={726}
 											sizes="(min-width: 1024px) 50vw, 100vw"
 											className="w-full h-full object-contain object-top"
-											priority
+											loading="eager"
+											data-image-id={activeItem.id}
+											onLoad={({ currentTarget }) => {
+												// Associate the load event with the correct image regardless of active tab timing
+												const imageId = currentTarget.dataset.imageId;
+												if (imageId) {
+													setImageLoaded(prev => ({ ...prev, [imageId]: true }));
+												}
+											}}
 										/>
 									</motion.div>
 								</AnimatePresence>

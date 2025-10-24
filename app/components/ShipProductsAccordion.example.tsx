@@ -24,8 +24,6 @@ export function ShipProductsExample() {
 			),
 			title: 'Venmo',
 			description: "Streamline your payment onboarding with intuitive social payment features. Connect with friends, split bills, and send money seamlessly from day one.",
-			ctaText: 'Explore Venmo Onboarding',
-			ctaLink: '/onboarding',
 			image: {
 				src: '/Onboarding/Venmo/Venmo (iOS).png',
 				alt: 'Venmo onboarding experience',
@@ -49,8 +47,6 @@ export function ShipProductsExample() {
 			),
 			title: 'Instagram',
 			description: 'Create engaging onboarding flows that help users discover, share, and connect. Build your community with personalized recommendations and an intuitive profile setup.',
-			ctaText: 'Explore Instagram Onboarding',
-			ctaLink: '/onboarding',
 			image: {
 				src: '/Onboarding/Instagram/Instagram (iOS).png',
 				alt: 'Instagram onboarding experience',
@@ -74,8 +70,6 @@ export function ShipProductsExample() {
 			),
 			title: 'Notion',
 			description: 'Guide users through a powerful workspace setup with templates, collaborative features, and organizational tools. Make productivity accessible from the first login.',
-			ctaText: 'Explore Notion Onboarding',
-			ctaLink: '/onboarding',
 			image: {
 				src: '/Onboarding/Notion/Notion (iOS).png',
 				alt: 'Notion onboarding experience',
@@ -89,6 +83,9 @@ export function ShipProductsExample() {
 	return (
 		<ShipProductsAccordion
 			heading="Onboarding Experiences"
+			description="Explore how leading apps create seamless first-time user experiences that convert and engage from day one."
+			ctaText="Explore Onboarding"
+			ctaLink="/onboarding"
 			items={accordionItems}
 			defaultValue="venmo" // First item expanded by default
 		/>
@@ -113,8 +110,6 @@ export function SearchBrowsingExample() {
 			),
 			title: 'Netflix',
 			description: 'Discover how Netflix creates personalized browsing experiences with algorithmic recommendations, intuitive categories, and seamless content discovery that keeps users engaged.',
-			ctaText: 'Explore Netflix Search',
-			ctaLink: '/search',
 			image: {
 				src: '/Search/Netflix/Netflix (iOS).png',
 				alt: 'Netflix search and browsing experience',
@@ -138,8 +133,6 @@ export function SearchBrowsingExample() {
 			),
 			title: 'YouTube',
 			description: 'Explore YouTube\'s powerful search capabilities combined with personalized recommendations, trending content, and an endless feed that adapts to user preferences.',
-			ctaText: 'Explore YouTube Search',
-			ctaLink: '/search',
 			image: {
 				src: '/Search/YouTube/YouTube (iOS).png',
 				alt: 'YouTube search and browsing experience',
@@ -163,8 +156,6 @@ export function SearchBrowsingExample() {
 			),
 			title: 'Airbnb',
 			description: 'Experience Airbnb\'s location-based search with rich filters, map integration, and detailed property browsing that helps users find their perfect stay.',
-			ctaText: 'Explore Airbnb Search',
-			ctaLink: '/search',
 			image: {
 				src: '/Search/Airbnb/Airbnb (iOS).png',
 				alt: 'Airbnb search and browsing experience',
@@ -178,6 +169,9 @@ export function SearchBrowsingExample() {
 	return (
 		<ShipProductsAccordion
 			heading="Search & Browsing Experiences"
+			description="Discover how top platforms help users find and explore content through intuitive search and personalized browsing."
+			ctaText="Explore Search"
+			ctaLink="/search"
 			items={accordionItems}
 			defaultValue="netflix" // First item expanded by default
 		/>
