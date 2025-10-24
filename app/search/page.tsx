@@ -1,21 +1,11 @@
-import Link from 'next/link';
-
 // Search & browsing analysis page
 export default function SearchPage() {
 	return (
 		<div className="min-h-screen bg-background">
 			<div className="max-w-7xl mx-auto px-6 lg:px-12 py-24">
 				<div className="space-y-8">
-					{/* Back link */}
-					<Link
-						href="/"
-						className="inline-flex items-center text-neutral-600 hover:text-neutral-900 transition-colors"
-					>
-						← Back to Home
-					</Link>
-
 					{/* Page header */}
-					<div className="space-y-4">
+					<div className="space-y-4 pt-20">
 						<h1 className="tracking-tight text-neutral-900">
 							Search & Browsing Analysis
 						</h1>
