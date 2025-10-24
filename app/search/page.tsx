@@ -1,4 +1,5 @@
 import { DimensionAccordion } from '../components/DimensionAccordion';
+import { Footer } from '../components/Footer';
 import { apps, dimensions, analysisContent } from './data';
 
 /**
@@ -40,6 +41,8 @@ export default function SearchPage() {
 					defaultValue="discovery-patterns"
 				/>
 			</div>
+
+			<Footer />
 		</div>
 	);
 }
