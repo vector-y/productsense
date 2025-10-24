@@ -1,0 +1,1 @@
+- Can you remember to use high pixel density on any company logo we use?
