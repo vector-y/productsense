@@ -205,7 +205,10 @@ export function DimensionAccordion({
 															<h4 className="text-base font-semibold text-neutral-900 mb-6">
 																Evidence
 															</h4>
-															<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+															<div className="flex flex-col lg:flex-row gap-8">
+															{/* Left: Screenshot Grid */}
+															<div className={content.screenshots.some(s => s.annotation) ? "w-full lg:w-3/5" : "w-full"}>
+																<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 																{content.screenshots.map((screenshot, idx) => (
 																	<button
 																		key={idx}
@@ -222,6 +225,10 @@ export function DimensionAccordion({
 																			className="object-cover object-top"
 																			sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
 																		/>
+																		{/* Screenshot number badge */}
+																		<div className="absolute top-2 left-2 w-7 h-7 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-semibold shadow-md">
+																			{idx + 1}
+																		</div>
 																		<div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors" />
 																		{/* Magnifying glass icon */}
 																		<div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -246,9 +253,34 @@ export function DimensionAccordion({
 																		</div>
 																	</button>
 																))}
+																</div>
 															</div>
+
+															{/* Right: Annotations */}
+															{content.screenshots.some(s => s.annotation) && (
+																<div className="lg:w-2/5 flex-shrink-0">
+																	<div className="space-y-4">
+																		{content.screenshots.map((screenshot, idx) =>
+																			screenshot.annotation ? (
+																				<div
+																					key={idx}
+																					className="flex gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200"
+																				>
+																					<div className="flex-shrink-0 w-7 h-7 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-semibold">
+																						{idx + 1}
+																					</div>
+																					<p className="text-sm text-neutral-700 leading-relaxed">
+																						{screenshot.annotation}
+																					</p>
+																				</div>
+																			) : null
+																		)}
+																	</div>
+																</div>
+															)}
 														</div>
-													)}
+													</div>
+												)}
 												</div>
 											</Tabs.Content>
 										);

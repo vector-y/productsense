@@ -81,10 +81,16 @@ export function ScreenshotLightbox({
 					/>
 
 					{/* Content Container */}
-					<div className="relative w-full h-full flex items-center justify-center p-4 md:p-8">
+					<div
+						className="relative w-full h-full flex items-center justify-center p-4 md:p-8"
+						onClick={onClose}
+					>
 						{/* Close Button */}
 						<button
-							onClick={onClose}
+							onClick={(e) => {
+								e.stopPropagation();
+								onClose();
+							}}
 							className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-neutral-900"
 							aria-label="Close lightbox"
 						>
@@ -115,6 +121,7 @@ export function ScreenshotLightbox({
 							animate={{ opacity: 1, scale: 1 }}
 							exit={{ opacity: 0, scale: 0.95 }}
 							transition={{ duration: 0.2 }}
+							onClick={(e) => e.stopPropagation()}
 						>
 							<div className="relative rounded-lg overflow-hidden shadow-2xl bg-white">
 								<Image
@@ -146,7 +153,10 @@ export function ScreenshotLightbox({
 						{/* Previous Button */}
 						{screenshots.length > 1 && currentIndex > 0 && (
 							<button
-								onClick={onPrevious}
+								onClick={(e) => {
+									e.stopPropagation();
+									onPrevious();
+								}}
 								className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-neutral-900"
 								aria-label="Previous screenshot"
 							>
@@ -173,7 +183,10 @@ export function ScreenshotLightbox({
 						{/* Next Button */}
 						{screenshots.length > 1 && currentIndex < screenshots.length - 1 && (
 							<button
-								onClick={onNext}
+								onClick={(e) => {
+									e.stopPropagation();
+									onNext();
+								}}
 								className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-neutral-900"
 								aria-label="Next screenshot"
 							>

@@ -19,6 +19,7 @@ export interface Screenshot {
 	src: string;
 	alt: string;
 	thumbnail: string;
+	annotation?: string; // Optional annotation text for each screenshot
 }
 
 export interface AnalysisContent {

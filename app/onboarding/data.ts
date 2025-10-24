@@ -66,7 +66,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Instagram/Instagram (iOS).png',
 				alt: 'Instagram onboarding flow',
-				thumbnail: '/Onboarding/Instagram/Instagram (iOS).png'
+				thumbnail: '/Onboarding/Instagram/Instagram (iOS).png',
+				annotation: 'The home screen immediately shows a curated feed of visual content from suggested accounts, ensuring users see engaging posts before following anyone or creating content themselves.'
 			}
 		]
 	},
@@ -78,7 +79,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Instagram/Instagram (iOS).png',
 				alt: 'Instagram information gathering',
-				thumbnail: '/Onboarding/Instagram/Instagram (iOS).png'
+				thumbnail: '/Onboarding/Instagram/Instagram (iOS).png',
+				annotation: 'Sign up requires just email/phone, name, and password. Profile photo and bio setup are deferred to after experiencing the core product.'
 			}
 		]
 	},
@@ -90,7 +92,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Instagram/Instagram (iOS).png',
 				alt: 'Instagram tone and trust elements',
-				thumbnail: '/Onboarding/Instagram/Instagram (iOS).png'
+				thumbnail: '/Onboarding/Instagram/Instagram (iOS).png',
+				annotation: 'Clean, uncluttered interface with friendly copy like "Welcome to Instagram." Social proof is prominent through follower counts and real content, building trust without alarmist privacy messaging.'
 			}
 		]
 	},
@@ -103,7 +106,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Instagram/Instagram (iOS).png',
 				alt: 'Instagram business model priorities',
-				thumbnail: '/Onboarding/Instagram/Instagram (iOS).png'
+				thumbnail: '/Onboarding/Instagram/Instagram (iOS).png',
+				annotation: 'Follow suggestions appear prominently early in onboarding, driving network effects and ensuring users have content to consume—the foundation of Instagram\'s ad-supported revenue model.'
 			}
 		]
 	},
@@ -115,7 +119,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Instagram/Instagram (iOS).png',
 				alt: 'Instagram friction points',
-				thumbnail: '/Onboarding/Instagram/Instagram (iOS).png'
+				thumbnail: '/Onboarding/Instagram/Instagram (iOS).png',
+				annotation: 'Account creation requires just three fields: email/phone, name, and password. Profile setup is optional and deferred, removing traditional onboarding bottlenecks. Facebook/Google sign-in options further reduce friction.'
 			}
 		]
 	},
@@ -130,7 +135,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Notion/Notion (iOS).png',
 				alt: 'Notion first moments',
-				thumbnail: '/Onboarding/Notion/Notion (iOS).png'
+				thumbnail: '/Onboarding/Notion/Notion (iOS).png',
+				annotation: 'Template gallery is featured prominently, offering pre-built structures for task lists, notes, and wikis. This prevents the "blank canvas" problem by giving users working examples to modify.'
 			}
 		]
 	},
@@ -142,7 +148,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Notion/Notion (iOS).png',
 				alt: 'Notion information gathering',
-				thumbnail: '/Onboarding/Notion/Notion (iOS).png'
+				thumbnail: '/Onboarding/Notion/Notion (iOS).png',
+				annotation: 'Notion asks about intended use (personal, team, or student) upfront to personalize templates and features. This purposeful data collection serves both user experience and product insights, without requesting invasive permissions.'
 			}
 		]
 	},
@@ -154,7 +161,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Notion/Notion (iOS).png',
 				alt: 'Notion tone and trust',
-				thumbnail: '/Onboarding/Notion/Notion (iOS).png'
+				thumbnail: '/Onboarding/Notion/Notion (iOS).png',
+				annotation: 'Professional yet approachable interface with clear explanations of concepts like workspaces and pages. The clean design and subtle animations feel polished, while transparent privacy controls build trust without overselling.'
 			}
 		]
 	},
@@ -166,7 +174,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Notion/Notion (iOS).png',
 				alt: 'Notion business priorities',
-				thumbnail: '/Onboarding/Notion/Notion (iOS).png'
+				thumbnail: '/Onboarding/Notion/Notion (iOS).png',
+				annotation: 'Template gallery and workspace setup encourage users to build substantial content quickly, creating switching costs. Team invitation prompts drive toward paid plans where revenue scales with seats.'
 			}
 		]
 	},
@@ -179,7 +188,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Notion/Notion (iOS).png',
 				alt: 'Notion friction and flow',
-				thumbnail: '/Onboarding/Notion/Notion (iOS).png'
+				thumbnail: '/Onboarding/Notion/Notion (iOS).png',
+				annotation: 'Users are asked about intended use (personal/team/student) upfront—deliberate friction that personalizes templates and defaults. This setup time is positioned as productive investment rather than a barrier.'
 			}
 		]
 	},
@@ -193,7 +203,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Venmo/Venmo (iOS).png',
 				alt: 'Venmo first moments',
-				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png'
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png',
+				annotation: 'Social feed shows friends\' transactions immediately (with dollar amounts hidden), providing psychological value and social proof while bank verification completes. Users understand the product\'s social dynamics before they can send money.'
 			}
 		]
 	},
@@ -206,7 +217,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Venmo/Venmo (iOS).png',
 				alt: 'Venmo information gathering',
-				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png'
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png',
+				annotation: 'Bank linking screen with instant verification via login credentials. Each data request includes clear security and compliance justifications. Multiple verification methods reduce abandonment risk.'
 			}
 		]
 	},
@@ -219,7 +231,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Venmo/Venmo (iOS).png',
 				alt: 'Venmo tone and trust',
-				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png'
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png',
+				annotation: 'Friendly blue interface with "12 million+ users" social proof. Copy is conversational ("Pay anyone") while security messaging uses clear, non-technical language. Privacy controls are accessible without being alarmist.'
 			}
 		]
 	},
@@ -231,7 +244,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Venmo/Venmo (iOS).png',
 				alt: 'Venmo business model',
-				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png'
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png',
+				annotation: 'Friend connections and social feed encourage frequent, casual payments rather than one-off transactions. Free peer-to-peer transfers are highlighted upfront, while revenue-generating features (instant transfer, business payments) are introduced later.'
 			}
 		]
 	},
@@ -243,7 +257,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Onboarding/Venmo/Venmo (iOS).png',
 				alt: 'Venmo friction management',
-				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png'
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png',
+				annotation: 'Onboarding is broken into clear stages: quick account creation, bank linking, then full verification. Instant bank linking via credentials is prioritized over slower micro-deposit methods. Clear progress indicators and time expectations reduce perceived friction.'
 			}
 		]
 	}

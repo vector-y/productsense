@@ -66,7 +66,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/Netflix/Netflix (iOS).png',
 				alt: 'Netflix discovery interface',
-				thumbnail: '/Search/Netflix/Netflix (iOS).png'
+				thumbnail: '/Search/Netflix/Netflix (iOS).png',
+				annotation: 'Home screen dominated by algorithmic rows like "Top Picks for You" and "Because You Watched." Search is tucked away in the navigation. No neutral browsing options or comprehensive catalog access—every surface is personalized.'
 			}
 		]
 	},
@@ -78,7 +79,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/Netflix/Netflix (iOS).png',
 				alt: 'Netflix choice architecture',
-				thumbnail: '/Search/Netflix/Netflix (iOS).png'
+				thumbnail: '/Search/Netflix/Netflix (iOS).png',
+				annotation: 'Infinite scroll of personalized rows creates "lean back" browsing. Auto-playing trailers grab attention, large preview cards prioritize visuals over metadata. No release dates or ratings in browse view—keeps focus on Netflix\'s recommendations.'
 			}
 		]
 	},
@@ -91,7 +93,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/Netflix/Netflix (iOS).png',
 				alt: 'Netflix business alignment',
-				thumbnail: '/Search/Netflix/Netflix (iOS).png'
+				thumbnail: '/Search/Netflix/Netflix (iOS).png',
+				annotation: 'Subscription model requires retention through engagement. Algorithmic recommendations maximize watch time to reduce churn. Same shows appear in multiple rows ("Trending," "Because You Watched") creating impression of endless content.'
 			}
 		]
 	},
@@ -103,7 +106,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/Netflix/Netflix (iOS).png',
 				alt: 'Netflix user psychology',
-				thumbnail: '/Search/Netflix/Netflix (iOS).png'
+				thumbnail: '/Search/Netflix/Netflix (iOS).png',
+				annotation: 'Auto-playing trailers and preview content create "TV channel" experience. Curated serendipity delivers "unexpected but familiar" recommendations. Absence of detailed metadata discourages intentional exploration, reinforcing "browse" mindset.'
 			}
 		]
 	},
@@ -116,7 +120,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/Netflix/Netflix (iOS).png',
 				alt: 'Netflix agency and nudging',
-				thumbnail: '/Search/Netflix/Netflix (iOS).png'
+				thumbnail: '/Search/Netflix/Netflix (iOS).png',
+				annotation: 'Rows upon rows create illusion of abundant choice while showing only 5% of catalog. Algorithmic filtering constrains options subtly—users don\'t realize they\'re viewing pre-selected recommendations. Search exists as secondary pressure valve.'
 			}
 		]
 	},
@@ -131,7 +136,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/YouTube/YouTube (iOS).png',
 				alt: 'YouTube discovery patterns',
-				thumbnail: '/Search/YouTube/YouTube (iOS).png'
+				thumbnail: '/Search/YouTube/YouTube (iOS).png',
+				annotation: 'Home feed shows algorithmic recommendations with visible reasoning ("Because you watched"). Search is equally prominent with robust filtering. Dual approach supports both passive browsing and active seeking. Transparency creates partnership feeling.'
 			}
 		]
 	},
@@ -143,7 +149,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/YouTube/YouTube (iOS).png',
 				alt: 'YouTube choice architecture',
-				thumbnail: '/Search/YouTube/YouTube (iOS).png'
+				thumbnail: '/Search/YouTube/YouTube (iOS).png',
+				annotation: 'Video cards include substantial metadata: view counts, upload dates, channel verification. "Not interested" and "Don\'t recommend channel" options give users algorithm control. Multiple escape routes from algorithmic feed: search, subscriptions, playlists.'
 			}
 		]
 	},
@@ -155,7 +162,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/YouTube/YouTube (iOS).png',
 				alt: 'YouTube business model alignment',
-				thumbnail: '/Search/YouTube/YouTube (iOS).png'
+				thumbnail: '/Search/YouTube/YouTube (iOS).png',
+				annotation: 'Ad-supported model benefits from varied browsing exposing users to different ad categories. "Up next" autoplay maximizes continuous viewing and ad inventory. Robust search and subscriptions keep creators invested, sustaining content supply.'
 			}
 		]
 	},
@@ -168,7 +176,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/YouTube/YouTube (iOS).png',
 				alt: 'YouTube user psychology',
-				thumbnail: '/Search/YouTube/YouTube (iOS).png'
+				thumbnail: '/Search/YouTube/YouTube (iOS).png',
+				annotation: 'Platform accommodates diverse user intentions: learning (goal-directed), entertainment (serendipitous), following creators (relationship-driven), researching topics (exploratory). Flexibility builds trust but abundance of choice can create decision fatigue.'
 			}
 		]
 	},
@@ -180,7 +189,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/YouTube/YouTube (iOS).png',
 				alt: 'YouTube agency vs nudging',
-				thumbnail: '/Search/YouTube/YouTube (iOS).png'
+				thumbnail: '/Search/YouTube/YouTube (iOS).png',
+				annotation: 'Transparent algorithm with explicit feedback options ("not interested"). Users can search extensively, use subscriptions, train the algorithm. But autoplay and "up next" still nudge toward extended viewing. Agency requires active assertion against defaults.'
 			}
 		]
 	},
@@ -195,7 +205,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/Airbnb/Airbnb (iOS).png',
 				alt: 'Airbnb discovery patterns',
-				thumbnail: '/Search/Airbnb/Airbnb (iOS).png'
+				thumbnail: '/Search/Airbnb/Airbnb (iOS).png',
+				annotation: 'Discovery begins with user parameters: location, dates, budget, guest count. Extensive filtering tools (amenities, property type, house rules) allow highly specific queries. Map-based browsing provides geographical control. No algorithmic "Top Picks" without input.'
 			}
 		]
 	},
@@ -208,7 +219,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/Airbnb/Airbnb (iOS).png',
 				alt: 'Airbnb choice architecture',
-				thumbnail: '/Search/Airbnb/Airbnb (iOS).png'
+				thumbnail: '/Search/Airbnb/Airbnb (iOS).png',
+				annotation: 'Property cards show critical info upfront: total price, location on map, rating with review count. Detail pages provide exhaustive information: amenities, house rules, cancellation policy, host profile, reviews. Information density supports confident high-stakes decisions.'
 			}
 		]
 	},
@@ -220,7 +232,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/Airbnb/Airbnb (iOS).png',
 				alt: 'Airbnb business model alignment',
-				thumbnail: '/Search/Airbnb/Airbnb (iOS).png'
+				thumbnail: '/Search/Airbnb/Airbnb (iOS).png',
+				annotation: 'Booking conversion model requires confident decisions. Extensive filtering reduces frustration and abandonment. Transparent pricing (total cost upfront, fees itemized) eliminates checkout surprises. "Limited availability" and "Guest favorite" badges create urgency and social proof.'
 			}
 		]
 	},
@@ -232,7 +245,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/Airbnb/Airbnb (iOS).png',
 				alt: 'Airbnb user psychology',
-				thumbnail: '/Search/Airbnb/Airbnb (iOS).png'
+				thumbnail: '/Search/Airbnb/Airbnb (iOS).png',
+				annotation: 'High-stakes decisions require control and certainty. Extensive filtering addresses anxiety about booking something unsuitable. Reviews and host profiles provide trust in peer-to-peer transactions. Photos and descriptions reduce surprises. Abundance of choice can create paralysis.'
 			}
 		]
 	},
@@ -245,7 +259,8 @@ export const analysisContent: AnalysisContent[] = [
 			{
 				src: '/Search/Airbnb/Airbnb (iOS).png',
 				alt: 'Airbnb agency and nudging',
-				thumbnail: '/Search/Airbnb/Airbnb (iOS).png'
+				thumbnail: '/Search/Airbnb/Airbnb (iOS).png',
+				annotation: 'Substantial user control over search, filters, sorting, map browsing. Platform rarely imposes recommendations without user initiation. But rankings weight booking likelihood, "booking soon" creates urgency, badges guide toward platform-preferred listings. Nudges within user-controlled framework.'
 			}
 		]
 	}
