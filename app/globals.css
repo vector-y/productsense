@@ -173,3 +173,13 @@ p, a, button, span, label, li, div, input, textarea, select {
 .modal-content:focus {
 	outline: none;
 }
+
+/* Scrollbar hide utility for horizontal scrolling tabs */
+.scrollbar-hide {
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;  /* Chrome, Safari and Opera */
+}

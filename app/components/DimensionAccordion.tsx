@@ -118,12 +118,13 @@ export function DimensionAccordion({
 									}
 								>
 									{/* Tab List */}
-									<Tabs.List className="flex border-b border-neutral-200 px-8 pt-6">
-										{apps.map((app) => (
-											<Tabs.Trigger
+									<div className="relative">
+						<Tabs.List className="flex border-b border-neutral-200 px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 overflow-x-auto scrollbar-hide">
+							{apps.map((app) => (
+								<Tabs.Trigger
 												key={app.id}
 												value={app.id}
-												className="flex items-center gap-2 px-6 py-3 border-b-2 -mb-px transition-all data-[state=active]:border-neutral-900 data-[state=inactive]:border-transparent data-[state=inactive]:text-neutral-600 data-[state=active]:text-neutral-900 hover:text-neutral-900 focus:outline-none"
+												className="flex items-center gap-2 px-4 sm:px-6 py-3 border-b-2 -mb-px transition-all whitespace-nowrap flex-shrink-0 data-[state=active]:border-neutral-900 data-[state=inactive]:border-transparent data-[state=inactive]:text-neutral-600 data-[state=active]:text-neutral-900 hover:text-neutral-900 focus:outline-none"
 											>
 												<div className="w-5 h-5 flex-shrink-0">
 													<Image
@@ -134,12 +135,15 @@ export function DimensionAccordion({
 														className="w-5 h-5 object-contain"
 													/>
 												</div>
-												<span className="font-medium text-base">{app.name}</span>
+												<span className="font-medium text-sm sm:text-base">{app.name}</span>
 											</Tabs.Trigger>
 										))}
 									</Tabs.List>
+									{/* Gradient fade indicator for scrollable tabs */}
+									<div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none sm:hidden" />
+								</div>
 
-									{/* Tab Content */}
+								{/* Tab Content */}
 									{apps.map((app) => {
 										const content = getContent(app.id, dimension.id);
 										if (!content) return null;
