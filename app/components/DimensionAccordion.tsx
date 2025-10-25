@@ -171,7 +171,7 @@ export function DimensionAccordion({
 																	sizes="(max-width: 768px) 100vw, 33vw"
 																/>
 																{/* Screenshot number badge */}
-																<div className="absolute top-2 left-2 h-6 px-2.5 py-1.5 bg-neutral-900 text-white rounded-full flex items-center justify-center text-xs font-semibold shadow-md whitespace-nowrap">
+																<div className="absolute top-2 left-2 h-6 px-2.5 py-1.5 bg-neutral-900 text-white rounded-full flex items-center justify-center text-xs shadow-md whitespace-nowrap">
 																	{screenshot.label || idx + 1}
 																</div>
 																<div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors" />
@@ -209,7 +209,7 @@ export function DimensionAccordion({
 																		key={idx}
 																		className="flex flex-col md:flex-row gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 items-start"
 																	>
-																		<div className="flex-shrink-0 h-6 px-2.5 py-1.5 bg-neutral-900 text-white rounded-full flex items-center justify-center text-xs font-semibold whitespace-nowrap shadow-sm">
+																		<div className="flex-shrink-0 h-6 px-2.5 py-1.5 bg-neutral-900 text-white rounded-full flex items-center justify-center text-xs whitespace-nowrap shadow-sm">
 																			{screenshot.label || idx + 1}
 																		</div>
 																		<p className="text-sm text-neutral-700 leading-relaxed">
