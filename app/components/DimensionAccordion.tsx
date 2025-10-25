@@ -152,15 +152,15 @@ export function DimensionAccordion({
 													<h4 className="text-base font-semibold text-neutral-900 mb-6">
 														Evidence
 													</h4>
-													{/* Screenshot Grid - 3 columns */}
-													<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+													{/* Screenshot Grid - 3 columns on desktop, horizontal scroll on mobile */}
+													<div className="flex md:grid md:grid-cols-3 gap-4 mb-8 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none pb-4 md:pb-0 -mx-2 px-2 md:mx-0 md:px-0">
 														{content.screenshots.map((screenshot, idx) => (
 															<button
 																key={idx}
 																onClick={() =>
 																	handleScreenshotClick(idx, content.screenshots)
 																}
-																className="relative aspect-[9/16] rounded-lg overflow-hidden border border-neutral-200 hover:border-neutral-300 hover:shadow-lg transition-all group focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2"
+																className="relative aspect-[9/16] rounded-lg overflow-hidden border border-neutral-200 hover:border-neutral-300 hover:shadow-lg transition-all group focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 flex-shrink-0 w-[200px] md:w-auto snap-start"
 																aria-label={`View screenshot ${idx + 1}`}
 															>
 																<Image
@@ -171,8 +171,8 @@ export function DimensionAccordion({
 																	sizes="(max-width: 768px) 100vw, 33vw"
 																/>
 																{/* Screenshot number badge */}
-																<div className="absolute top-2 left-2 w-7 h-7 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-semibold shadow-md">
-																	{idx + 1}
+																<div className="absolute top-2 left-2 h-6 px-2.5 py-1.5 bg-neutral-900 text-white rounded-full flex items-center justify-center text-xs font-semibold shadow-md whitespace-nowrap">
+																	{screenshot.label || idx + 1}
 																</div>
 																<div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors" />
 																{/* Magnifying glass icon */}
@@ -207,10 +207,10 @@ export function DimensionAccordion({
 																screenshot.annotation ? (
 																	<div
 																		key={idx}
-																		className="flex gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200"
+																		className="flex flex-col md:flex-row gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 items-start"
 																	>
-																		<div className="flex-shrink-0 w-7 h-7 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm font-semibold">
-																			{idx + 1}
+																		<div className="flex-shrink-0 h-6 px-2.5 py-1.5 bg-neutral-900 text-white rounded-full flex items-center justify-center text-xs font-semibold whitespace-nowrap shadow-sm">
+																			{screenshot.label || idx + 1}
 																		</div>
 																		<p className="text-sm text-neutral-700 leading-relaxed">
 																			{screenshot.annotation}

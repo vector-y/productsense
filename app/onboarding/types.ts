@@ -20,6 +20,7 @@ export interface Screenshot {
 	alt: string;
 	thumbnail: string;
 	annotation?: string; // Optional annotation text for each screenshot
+	label?: string; // Optional label for the badge (e.g., "1 - Instagram")
 }
 
 export interface AnalysisContent {
