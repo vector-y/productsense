@@ -19,6 +19,11 @@ export const apps: App[] = [
 		id: 'venmo',
 		name: 'Venmo',
 		icon: '/venmo.png'
+	},
+	{
+		id: 'comparative',
+		name: 'Comparative Analysis',
+		icon: '/comparative.png'
 	}
 ];
 
@@ -56,21 +61,35 @@ export const dimensions: Dimension[] = [
 ];
 
 export const analysisContent: AnalysisContent[] = [
-	// Instagram analyses
+	// Comparative analysis
 	{
-		appId: 'instagram',
+		appId: 'comparative',
 		dimensionId: 'first-moments',
-		keyInsight: 'Immediate social value',
-		analysis: 'Instagram prioritizes rapid engagement by delivering immediate social value through its onboarding flow. New users are quickly guided to follow suggested accounts based on their interests, creating an instant personalized feed. The app emphasizes visual discovery from the very first screen, showcasing compelling content that demonstrates the platform\'s value proposition.\n\nThe onboarding experience is designed to get users consuming and creating content within minutes. By surfacing popular accounts and trending content early, Instagram ensures that even before users post their first photo, they\'re already experiencing the core value of the platform: connection through visual storytelling. This approach minimizes the "empty state" problem common in social networks by filling the feed immediately with relevant, engaging content.',
+		keyInsight: 'Comparative speed to value',
+		analysis: 'Notion is the quickest to deliver meaningful tips on the core functionality of the app, with the most concise but information rich onboarding experience. The app even introduces a new initiative the company is pushing for with their AI assistant which shows a lot of immediate value to help users set up their workspace(s).\n\nCompared to Notion, both Instagram and Venmo take a while to get into the meaningful functionality. This is because of the higher risks associated with their respective platforms. Venmo has legal obligations to make sure users know about their fee policies. On the other hand, Instagram has to make sure the user agrees to their terms and policies because of the potentially turbulent nature of social media platforms.\n\n**What counts as "value" in each context?**\n\n"Value" for Instagram looks like being able to connect with friends or following accounts that interest you to develop a deeply personal algorithm on your preferences. Venmo is an interesting case because it usually doesn\'t have much upfront value. Creating an account on Venmo usually is in preparation for payments later, not in the exact moment (ideally). That being said, once the payments do need to be exchanged, Venmo\'s value skyrockets since there aren\'t payment methods as widespread with their platform\'s reach. Notion\'s value is simple and quick with a short and meaningful onboarding that transports users straight to an assistant to aid users with their productivity.',
 		screenshots: [
 			{
 				src: '/Onboarding/Instagram/Instagram (iOS).png',
 				alt: 'Instagram onboarding flow',
 				thumbnail: '/Onboarding/Instagram/Instagram (iOS).png',
 				annotation: 'The home screen immediately shows a curated feed of visual content from suggested accounts, ensuring users see engaging posts before following anyone or creating content themselves.'
+			},
+			{
+				src: '/Onboarding/Notion/Notion (iOS).png',
+				alt: 'Notion first moments',
+				thumbnail: '/Onboarding/Notion/Notion (iOS).png',
+				annotation: 'Template gallery is featured prominently, offering pre-built structures for task lists, notes, and wikis. This prevents the "blank canvas" problem by giving users working examples to modify.'
+			},
+			{
+				src: '/Onboarding/Venmo/Venmo (iOS).png',
+				alt: 'Venmo first moments',
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png',
+				annotation: 'Social feed shows friends\' transactions immediately (with dollar amounts hidden), providing psychological value and social proof while bank verification completes. Users understand the product\'s social dynamics before they can send money.'
 			}
 		]
 	},
+
+	// Instagram analyses
 	{
 		appId: 'instagram',
 		dimensionId: 'information-gathering',
@@ -125,21 +144,6 @@ export const analysisContent: AnalysisContent[] = [
 		]
 	},
 
-	// Notion analyses
-	{
-		appId: 'notion',
-		dimensionId: 'first-moments',
-		keyInsight: 'Template-driven value',
-		analysis: 'Notion faces a unique onboarding challenge: delivering immediate productivity value when users start with an empty workspace. The app addresses this through a template-first approach, offering pre-built structures for common use cases like task management, note-taking, and team wikis. This allows users to experience Notion\'s capabilities before understanding all its features.\n\nThe onboarding emphasizes "getting started" over "setup," with quick-start guides and sample content that users can modify rather than creating from scratch. This scaffolding approach demonstrates Notion\'s flexibility while preventing the paralysis of a blank canvas. New users can experience the satisfaction of organizing information and checking off tasks within their first session, providing tangible value even before they fully grasp the platform\'s power.',
-		screenshots: [
-			{
-				src: '/Onboarding/Notion/Notion (iOS).png',
-				alt: 'Notion first moments',
-				thumbnail: '/Onboarding/Notion/Notion (iOS).png',
-				annotation: 'Template gallery is featured prominently, offering pre-built structures for task lists, notes, and wikis. This prevents the "blank canvas" problem by giving users working examples to modify.'
-			}
-		]
-	},
 	{
 		appId: 'notion',
 		dimensionId: 'information-gathering',
@@ -194,20 +198,6 @@ export const analysisContent: AnalysisContent[] = [
 		]
 	},
 
-	// Venmo analyses
-	{
-		appId: 'venmo',
-		dimensionId: 'first-moments',
-		analysis: 'Venmo faces a critical onboarding challenge: users can\'t experience the core value (sending/receiving money) until they\'ve completed identity verification and bank linking—processes that require significant time and trust. The app addresses this by emphasizing the social feed early, allowing users to see friends\' transactions and understand the product\'s social dynamics while verification processes complete in the background.\n\nThe onboarding prioritizes building trust in financial security while showcasing Venmo\'s unique social angle. Users see real transaction activity (with dollar amounts hidden) immediately, demonstrating that Venmo is both a payment tool and a social network. This social proof—seeing friends\' transactions—provides psychological value even before financial value is accessible. The app manages expectations clearly, explaining that full functionality requires verification, but doesn\'t block exploration of the social features and interface while that happens.',
-		screenshots: [
-			{
-				src: '/Onboarding/Venmo/Venmo (iOS).png',
-				alt: 'Venmo first moments',
-				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png',
-				annotation: 'Social feed shows friends\' transactions immediately (with dollar amounts hidden), providing psychological value and social proof while bank verification completes. Users understand the product\'s social dynamics before they can send money.'
-			}
-		]
-	},
 	{
 		appId: 'venmo',
 		dimensionId: 'information-gathering',
