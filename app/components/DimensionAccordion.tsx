@@ -149,7 +149,7 @@ export function DimensionAccordion({
 											{/* Screenshots */}
 											{content.screenshots.length > 0 && (
 												<div className="pt-8 border-t border-neutral-200">
-													<h4 className="text-base font-semibold text-neutral-900 mb-6">
+													<h4 className="text-3xl font-semibold text-neutral-900 mb-6">
 														Evidence
 													</h4>
 													{/* Screenshot Grid - 3 columns on desktop, horizontal scroll on mobile */}

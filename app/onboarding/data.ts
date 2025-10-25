@@ -69,11 +69,11 @@ export const analysisContent: AnalysisContent[] = [
 		analysis: '<strong>How quickly does each app deliver something meaningful to a new user?</strong>\n\n<em>Notion</em> is the quickest to deliver meaningful tips on the core functionality of the app, with the most concise but information rich onboarding experience. The app even introduces a new initiative the company is pushing for with their AI assistant which shows a lot of immediate value to help users set up their workspace(s).\n\nCompared to <em>Notion</em>, both <em>Instagram</em> and <em>Venmo</em> take a while to get into the meaningful functionality. This is because of the higher risks associated with their respective platforms. <em>Venmo</em> has legal obligations to make sure users know about their fee policies. On the other hand, <em>Instagram</em> has to make sure the user agrees to their terms and policies because of the potentially turbulent nature of social media platforms.\n\n<strong>What counts as "value" in each context?</strong>\n\n"Value" for <em>Instagram</em> looks like being able to connect with friends or following accounts that interest you to develop a deeply personal algorithm on your preferences. <em>Venmo</em> is an interesting case because it usually doesn\'t have much upfront value. Creating an account on <em>Venmo</em> usually is in preparation for payments later, not in the exact moment (ideally). That being said, once the payments do need to be exchanged, <em>Venmo</em>\'s value skyrockets since there aren\'t payment methods as widespread with their platform\'s reach. <em>Notion</em>\'s value is simple and quick with a short and meaningful onboarding that transports users straight to an assistant to aid users with their productivity.',
 		screenshots: [
 			{
-				src: '/Onboarding/Instagram/Instagram (iOS).png',
+				src: '/Onboarding/Instagram/Instagram (iOS) friend.png',
 				alt: 'Instagram onboarding flow',
-				thumbnail: '/Onboarding/Instagram/Instagram (iOS).png',
+				thumbnail: '/Onboarding/Instagram/Instagram (iOS) friend.png',
 				label: '1 - Instagram',
-				annotation: 'The home screen immediately shows a curated feed of visual content from suggested accounts, ensuring users see engaging posts before following anyone or creating content themselves.'
+				annotation: 'Contact permission request appears early in onboarding, framed as making it easier to find friends. Instagram emphasizes user control with clear explanations about syncing and the ability to turn it off in Settings.'
 			},
 			{
 				src: '/Onboarding/Notion/Notion (iOS).png',
