@@ -152,74 +152,96 @@ export function DimensionAccordion({
 													<h4 className="text-3xl font-semibold text-neutral-900 mb-6">
 														Evidence
 													</h4>
-													{/* Screenshot Grid - 3 columns on desktop, horizontal scroll on mobile */}
-													<div className="flex md:grid md:grid-cols-3 gap-4 mb-8 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none pb-4 md:pb-0 -mx-2 px-2 md:mx-0 md:px-0">
-														{content.screenshots.map((screenshot, idx) => (
-															<button
-																key={idx}
-																onClick={() =>
-																	handleScreenshotClick(idx, content.screenshots)
-																}
-																className="relative aspect-[9/16] rounded-lg overflow-hidden border border-neutral-200 hover:border-neutral-300 hover:shadow-lg transition-all group focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 flex-shrink-0 w-[200px] md:w-auto snap-start"
-																aria-label={`View screenshot ${idx + 1}`}
-															>
-																<Image
-																	src={screenshot.thumbnail}
-																	alt={screenshot.alt}
-																	fill
-																	className="object-cover object-top"
-																	sizes="(max-width: 768px) 100vw, 33vw"
-																/>
-																{/* Screenshot number badge */}
-																<div className="absolute top-2 left-2 h-6 px-2.5 py-1.5 bg-neutral-900 text-white rounded-full flex items-center justify-center text-xs shadow-md whitespace-nowrap">
-																	{screenshot.label || idx + 1}
-																</div>
-																<div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors" />
-																{/* Magnifying glass icon */}
-																<div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-																	<div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
-																		<svg
-																			xmlns="http://www.w3.org/2000/svg"
-																			width="24"
-																			height="24"
-																			fill="none"
-																			viewBox="0 0 24 24"
-																			aria-hidden="true"
-																		>
-																			<path
-																				stroke="currentColor"
-																				strokeLinecap="round"
-																				strokeLinejoin="round"
-																				strokeWidth="2"
-																				d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-																			/>
-																		</svg>
-																	</div>
-																</div>
-															</button>
-														))}
-													</div>
+													{(() => {
+														// Group screenshots into chunks of 3
+														const chunkSize = 3;
+														const screenshotGroups = [];
+														for (let i = 0; i < content.screenshots.length; i += chunkSize) {
+															screenshotGroups.push(content.screenshots.slice(i, i + chunkSize));
+														}
 
-													{/* Annotations Below */}
-													{content.screenshots.some(s => s.annotation) && (
-														<div className="space-y-4">
-															{content.screenshots.map((screenshot, idx) =>
-																screenshot.annotation ? (
-																	<div
-																		key={idx}
-																		className="flex flex-col md:flex-row gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 items-start"
-																	>
-																		<div className="flex-shrink-0 h-6 px-2.5 py-1.5 bg-neutral-900 text-white rounded-full flex items-center justify-center text-xs whitespace-nowrap shadow-sm">
-																			{screenshot.label || idx + 1}
-																		</div>
-																		<p className="text-sm text-neutral-700 leading-relaxed">
-																			{screenshot.annotation}
-																		</p>
+														return screenshotGroups.map((group, groupIndex) => (
+															<div key={groupIndex}>
+																{/* Screenshot Grid - 3 columns on desktop, horizontal scroll on mobile */}
+																<div className="flex md:grid md:grid-cols-3 gap-4 mb-8 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none pb-4 md:pb-0 -mx-2 px-2 md:mx-0 md:px-0">
+																	{group.map((screenshot, idx) => {
+																		const globalIdx = groupIndex * chunkSize + idx;
+																		return (
+																			<button
+																				key={globalIdx}
+																				onClick={() =>
+																					handleScreenshotClick(globalIdx, content.screenshots)
+																				}
+																				className="relative aspect-[9/16] rounded-lg overflow-hidden border border-neutral-200 hover:border-neutral-300 hover:shadow-lg transition-all group focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 flex-shrink-0 w-[200px] md:w-auto snap-start"
+																				aria-label={`View screenshot ${globalIdx + 1}`}
+																			>
+																				<Image
+																					src={screenshot.thumbnail}
+																					alt={screenshot.alt}
+																					fill
+																					className="object-cover object-top"
+																					sizes="(max-width: 768px) 100vw, 33vw"
+																				/>
+																				{/* Screenshot number badge */}
+																				<div className="absolute top-2 left-2 h-6 px-2.5 py-1.5 bg-neutral-900 text-white rounded-full flex items-center justify-center text-xs shadow-md whitespace-nowrap">
+																					{screenshot.label || globalIdx + 1}
+																				</div>
+																				<div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-colors" />
+																				{/* Magnifying glass icon */}
+																				<div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+																					<div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+																						<svg
+																							xmlns="http://www.w3.org/2000/svg"
+																							width="24"
+																							height="24"
+																							fill="none"
+																							viewBox="0 0 24 24"
+																							aria-hidden="true"
+																						>
+																							<path
+																								stroke="currentColor"
+																								strokeLinecap="round"
+																								strokeLinejoin="round"
+																								strokeWidth="2"
+																								d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+																							/>
+																						</svg>
+																					</div>
+																				</div>
+																			</button>
+																		);
+																	})}
+																</div>
+
+																{/* Annotations Below for this group */}
+																{group.some(s => s.annotation) && (
+																	<div className="space-y-4">
+																		{group.map((screenshot, idx) => {
+																			const globalIdx = groupIndex * chunkSize + idx;
+																			return screenshot.annotation ? (
+																				<div
+																					key={globalIdx}
+																					className="flex flex-col md:flex-row gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 items-start"
+																				>
+																					<div className="flex-shrink-0 min-w-[100px] h-6 px-3 py-1 bg-neutral-900 text-white rounded-full flex items-center justify-start text-xs whitespace-nowrap shadow-sm">
+																						{screenshot.label || globalIdx + 1}
+																					</div>
+																					<p className="text-sm text-neutral-700 leading-relaxed">
+																						{screenshot.annotation}
+																					</p>
+																				</div>
+																			) : null;
+																		})}
 																	</div>
-																) : null
-															)}
-														</div>
-													)}
+																)}
+
+																{/* Separator between groups */}
+																{groupIndex < screenshotGroups.length - 1 && (
+																	<div className="my-12 border-t-2 border-neutral-300" />
+																)}
+															</div>
+														));
+													})()}
 												</div>
 											)}
 										</div>

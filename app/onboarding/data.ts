@@ -69,25 +69,46 @@ export const analysisContent: AnalysisContent[] = [
 		analysis: `<strong>How quickly does each app deliver something meaningful to a new user?</strong>\n\n<em>Notion</em> is the quickest to deliver meaningful tips on the core functionality of the app, with the most concise but information rich onboarding experience. The app even introduces a new initiative the company is pushing for with their AI assistant which shows a lot of immediate value to help users set up their workspace(s).\n\nCompared to <em>Notion</em>, both <em>Instagram</em> and <em>Venmo</em> take a while to get into the meaningful functionality. This is because of the higher risks associated with their respective platforms. <em>Venmo</em> has legal obligations to make sure users know about their fee policies. On the other hand, <em>Instagram</em> has to make sure the user agrees to their terms and policies because of the potentially turbulent nature of social media platforms.\n\n<strong>What counts as "value" in each context?</strong>\n\n"Value" for <em>Instagram</em> looks like being able to connect with friends or following accounts that interest you to develop a deeply personal algorithm on your preferences. <em>Venmo</em> is an interesting case because it usually doesn't have much upfront value. Creating an account on <em>Venmo</em> usually is in preparation for payments later, not in the exact moment (ideally). That being said, once the payments do need to be exchanged, <em>Venmo</em>'s value skyrockets since there aren't payment methods as widespread with their platform's reach. <em>Notion</em>'s value is simple and quick with a short and meaningful onboarding that transports users straight to an assistant to aid users with their productivity.`,
 		screenshots: [
 			{
+				src: '/Onboarding/Venmo/Venmo (iOS).png',
+				alt: 'Venmo first moments',
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png',
+				label: '1 - Venmo',
+				annotation: 'Social feed shows friends\' transactions immediately (with dollar amounts hidden), providing psychological value and social proof while bank verification completes. Users understand the product\'s social dynamics before they can send money.'
+			},
+			{
 				src: '/Onboarding/Instagram/Instagram (iOS) friend.png',
 				alt: 'Instagram onboarding flow',
 				thumbnail: '/Onboarding/Instagram/Instagram (iOS) friend.png',
-				label: '1 - Instagram',
+				label: '2 - Instagram',
 				annotation: 'Contact permission request appears early in onboarding, framed as making it easier to find friends. Instagram emphasizes user control with clear explanations about syncing and the ability to turn it off in Settings.'
 			},
 			{
 				src: '/Onboarding/Notion/Notion (iOS).png',
 				alt: 'Notion first moments',
 				thumbnail: '/Onboarding/Notion/Notion (iOS).png',
-				label: '2 - Notion',
+				label: '3 - Notion',
 				annotation: 'Template gallery is featured prominently, offering pre-built structures for task lists, notes, and wikis. This prevents the "blank canvas" problem by giving users working examples to modify.'
 			},
 			{
-				src: '/Onboarding/Venmo/Venmo (iOS).png',
-				alt: 'Venmo first moments',
-				thumbnail: '/Onboarding/Venmo/Venmo (iOS).png',
-				label: '3 - Venmo',
-				annotation: 'Social feed shows friends\' transactions immediately (with dollar amounts hidden), providing psychological value and social proof while bank verification completes. Users understand the product\'s social dynamics before they can send money.'
+				src: '/Onboarding/Venmo/Venmo (iOS) connect.png',
+				alt: 'Venmo friend connections',
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS) connect.png',
+				label: '4 - Venmo',
+				annotation: 'Contact sync screen framed around both convenience ("make it easier to find and pay your friends") and security ("helps to protect your Venmo account"). Playful illustration of friends on roller skates reinforces the social nature. Clear permission management explanation with "Skip for now" option makes it entirely optional.'
+			},
+			{
+				src: '/Onboarding/Instagram/Instagram (iOS) follow.png',
+				alt: 'Instagram follow suggestions',
+				thumbnail: '/Onboarding/Instagram/Instagram (iOS) follow.png',
+				label: '5 - Instagram',
+				annotation: 'Follow suggestions with "Select all" option and visual checkmarks showing progress. The header "Try following 5+ people" sets a clear goal, while subtext notes "Following isn\'t required, but it\'s recommended for a personalized experience"—optional but encouraged for building a personalized feed.'
+			},
+			{
+				src: '/Onboarding/Notion/Notion (iOS) tipOrder.png',
+				alt: 'Notion interaction tip',
+				thumbnail: '/Onboarding/Notion/Notion (iOS) tipOrder.png',
+				label: '6 - Notion',
+				annotation: 'Essential interaction tip teaching "Touch and hold to reorder any content" with visual demonstration. Notion proactively educates users about core gestures rather than assuming organic discovery, reducing future friction with fundamental features that unlock the product\'s flexibility.'
 			}
 		]
 	},
@@ -100,25 +121,77 @@ export const analysisContent: AnalysisContent[] = [
 		analysis: `<strong>What data does each app ask for early (identity, preferences, contacts, payment info)?</strong>\n\n<em>Venmo</em> asks for: how you'll use the app, your phone number (oriented itself as mobile first), and key identity information to establish trust between you and the platform.\n\n<em>Instagram</em> asks for: either your number or email, a confirmation on that form of identification, and then establishing user context like birthday, name, and username.\n\n<em>Notion</em> asks for: your email address verification, how you want to use the app, and your areas of interest to establish how to accommodate for your personal context and needs.\n\n<strong>How much effort does this require from users, and how is it justified?</strong>\n\nBoth <em>Instagram</em> and <em>Venmo</em> have about the same amount of screens that help to contextualize who the user is. <em>Notion</em>, unlike the other two platforms, has more flexibility with sign up options like "Continue with Google" which helps to get started much more quickly. Comparatively, <em>Instagram</em> and <em>Venmo</em> don't rely on third party vendors to learn about their users because they want to build a deeper relationship with their users. <em>Notion</em> cares more about quickly setting up an environment and isn't held back by setting up logistics like payment information or following other accounts.`,
 		screenshots: [
 			{
+				src: '/Onboarding/Venmo/Venmo (iOS) aConfirm.png',
+				alt: 'Venmo information gathering',
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS) aConfirm.png',
+				label: '1 - Venmo',
+				annotation: 'Venmo requires extensive identity verification, requesting legal name, username, email, and password. Clear security requirements are stated (8-20 characters, must include number/symbol), and legal agreements are presented with clickable links before users can proceed.'
+			},
+			{
 				src: '/Onboarding/Instagram/Instagram (iOS) birthday.png',
 				alt: 'Instagram information gathering',
 				thumbnail: '/Onboarding/Instagram/Instagram (iOS) birthday.png',
-				label: '1 - Instagram',
+				label: '2 - Instagram',
 				annotation: 'Instagram collects birthday information early in onboarding, with clear disclosure about privacy ("Use your own birthday... No one will see this unless you choose to share it") and a prominent link explaining why this data is required.'
 			},
 			{
 				src: '/Onboarding/Notion/Notion (iOS) google.png',
 				alt: 'Notion information gathering',
 				thumbnail: '/Onboarding/Notion/Notion (iOS) google.png',
-				label: '2 - Notion',
+				label: '3 - Notion',
 				annotation: 'Notion offers flexible sign-up through "Sign in with Google," streamlining the onboarding process. The screen clearly explains what data will be shared (name, email, language preference, profile picture) and provides links to Privacy Policy and Terms of Service.'
+			}
+		]
+	},
+
+	// Comparative analysis - Tone and Trust
+	{
+		appId: 'comparative',
+		dimensionId: 'tone-trust',
+		keyInsight: 'Visual language and emotional resonance',
+		analysis: `<strong>How do visual design, copy, and interaction style create a first impression of trust, ease, or excitement?</strong>\n\n<em>Venmo</em>'s crayon illustration style makes the platform feel very approachable, fun, and friendly. The texture on each stroke of the image creates a handcrafted feel, while the mix of illustrations ranges from casual (pizza night) to emerging trends (crypto), showing versatility. The visual language for <em>Venmo</em> itself has rounded edges throughout, with no hard or sharp edges in the visual components—reinforcing an accessible, non-threatening aesthetic.\n\n<em>Instagram</em> creates a more subtle visual design with the soft purple and cotton candy gradient that creates an almost iridescent sheen for the background of most initial screens. <em>Instagram</em> uses more straight-edge outline illustrations that help establish trust and a sense of elegance with using the app itself. The polished, minimal aesthetic signals maturity and sophistication.\n\n<em>Notion</em> has a very elegant and eye-catching illustration style that makes use of primary colors (red, yellow, blue) to nail home the fact that they work within the constraints of using "building blocks." The illustration showcases a high level of trust required to invest time into their product. It depicts two characters in the foreground studying on their laptops, collaborating through their mind's self-expression—positioning <em>Notion</em> as a requirement when students and workers alike are looking to manage how they spend their time building ideas.\n\n<strong>Where do you see cues that lower anxiety or uncertainty?</strong>\n\nAnxiety-reducing cues appear throughout the onboarding experiences. Within <em>Notion</em>'s app, phrases like "Select as many as you want" help give agency back to the user rather than creating pressure to make the "right" choice. Visual language helps communicate optionality and flexibility, making users feel empowered rather than constrained during the setup process.`,
+		screenshots: [
+			{
+				src: '/Onboarding/Venmo/Venmo (iOS) splash.png',
+				alt: 'Venmo splash screen',
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS) splash.png',
+				label: '1 - Venmo',
+				annotation: 'Venmo\'s splash screen features a playful crayon-style illustration with textured strokes depicting money, pizza, QR codes, and crypto—showing the app\'s versatility. The hand holding the phone with rounded edges creates an approachable, friendly first impression that lowers barriers to entry.'
 			},
 			{
-				src: '/Onboarding/Venmo/Venmo (iOS) aConfirm.png',
-				alt: 'Venmo information gathering',
-				thumbnail: '/Onboarding/Venmo/Venmo (iOS) aConfirm.png',
-				label: '3 - Venmo',
-				annotation: 'Venmo requires extensive identity verification, requesting legal name, username, email, and password. Clear security requirements are stated (8-20 characters, must include number/symbol), and legal agreements are presented with clickable links before users can proceed.'
+				src: '/Onboarding/Instagram/Instagram (iOS) login.png',
+				alt: 'Instagram login screen',
+				thumbnail: '/Onboarding/Instagram/Instagram (iOS) login.png',
+				label: '2 - Instagram',
+				annotation: 'Instagram\'s login screen features the iconic gradient logo on a soft iridescent background, with clean, rounded input fields for username/email and password. The prominent blue "Log in" button and "Create new account" option at the bottom create a welcoming, trustworthy first impression with the polished, minimal aesthetic that signals Instagram\'s established presence.'
+			},
+			{
+				src: '/Onboarding/Notion/Notion (iOS) splash.png',
+				alt: 'Notion splash screen',
+				thumbnail: '/Onboarding/Notion/Notion (iOS) splash.png',
+				label: '3 - Notion',
+				annotation: 'Notion\'s splash screen features an elegant illustration using primary colors showing two people working on laptops with a shared thought bubble containing productivity icons. The tagline "Think it. Make it." and login prompt establish high trust requirements while showcasing collaboration and creative expression.'
+			},
+			{
+				src: '/Onboarding/Venmo/Venmo (iOS) connect.png',
+				alt: 'Venmo contact sync permission',
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS) connect.png',
+				label: '4 - Venmo',
+				annotation: 'Venmo\'s contact sync request exemplifies anxiety-reducing design: the playful roller skate illustration makes a sensitive permission feel fun rather than invasive. Dual value proposition combines convenience ("easier to find and pay friends") with security ("helps protect your Venmo account"), addressing both practical and safety concerns. "Skip for now" and clear permission management explanation ensure users never feel trapped or pressured.'
+			},
+			{
+				src: '/Onboarding/Instagram/Instagram (iOS) remember.png',
+				alt: 'Instagram login info security',
+				thumbnail: '/Onboarding/Instagram/Instagram (iOS) remember.png',
+				label: '5 - Instagram',
+				annotation: 'Instagram\'s "Remember login info?" screen builds trust through transparency and user control. The lock icon with colorful rays transforms security messaging into friendly, approachable design. Clear explanation of what will be remembered and where (iCloud devices) reduces anxiety, while the "Not now" option removes pressure—users feel empowered to decline without consequence.'
+			},
+			{
+				src: '/Onboarding/Notion/Notion (iOS) tipSave.png',
+				alt: 'Notion web clipper tip',
+				thumbnail: '/Onboarding/Notion/Notion (iOS) tipSave.png',
+				label: '6 - Notion',
+				annotation: 'Notion\'s essential tips screen demonstrates practical value through real-world use cases. The heading hierarchy ("Some essential tips" + bold feature description) creates scannable content that respects user attention. The device mockup showing actual functionality builds confidence—users see exactly what they\'ll be able to do, reducing uncertainty about the product\'s capabilities.'
 			}
 		]
 	},
