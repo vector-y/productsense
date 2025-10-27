@@ -29,7 +29,7 @@ export default function OnboardingPage() {
 				<div className="mb-8">
 					<p className="text-neutral-600 text-base">
 						Compare how all three apps approach each aspect of onboarding.
-						Click on a dimension below to expand the analysis and switch between apps.
+						Click on a dimension below to read and learn more about my analysis.
 					</p>
 				</div>
 

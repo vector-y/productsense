@@ -173,11 +173,11 @@ export const analysisContent: AnalysisContent[] = [
 				annotation: 'Notion\'s splash screen features an elegant illustration using primary colors showing two people working on laptops with a shared thought bubble containing productivity icons. The tagline "Think it. Make it." and login prompt establish high trust requirements while showcasing collaboration and creative expression.'
 			},
 			{
-				src: '/Onboarding/Venmo/Venmo (iOS) connect.png',
-				alt: 'Venmo contact sync permission',
-				thumbnail: '/Onboarding/Venmo/Venmo (iOS) connect.png',
+				src: '/Onboarding/Venmo/Venmo (iOS) celebrate.png',
+				alt: 'Venmo celebration screen',
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS) celebrate.png',
 				label: '4 - Venmo',
-				annotation: 'Venmo\'s contact sync request exemplifies anxiety-reducing design: the playful roller skate illustration makes a sensitive permission feel fun rather than invasive. Dual value proposition combines convenience ("easier to find and pay friends") with security ("helps protect your Venmo account"), addressing both practical and safety concerns. "Skip for now" and clear permission management explanation ensure users never feel trapped or pressured.'
+				annotation: 'Venmo\'s celebration screen uses cheerful visuals and positive messaging to create an emotional high point in the onboarding journey, reducing anxiety about the technical setup process and building excitement about using the platform.'
 			},
 			{
 				src: '/Onboarding/Instagram/Instagram (iOS) remember.png',
@@ -202,7 +202,81 @@ export const analysisContent: AnalysisContent[] = [
 		dimensionId: 'business-model',
 		keyInsight: 'Business priorities shape onboarding flow',
 		analysis: `<strong>Business model priorities</strong>\n\n<ul>\n<li><em>Instagram</em>: needs rapid engagement and network growth</li>\n<li><em>Notion</em>: needs effective setup for retention</li>\n<li><em>Venmo</em>: needs verified identity and trust for transactions</li>\n</ul>\n\n<strong>How do onboarding choices directly reflect these priorities?</strong>\n\n<em>Instagram</em> prioritizes network building by prompting new users to follow 5 people immediately. Each person they follow has a more established profile, providing data points about the user's interests. This initial follow action serves dual purposes: it populates the user's feed with content to engage with right away, while giving Instagram's algorithm early signals to personalize future recommendations.\n\n<em>Venmo</em> balances customization with compliance by opening with "How will you use Venmo?" to gather usage intent, then immediately presenting legal information and verification requirements. This sequence reflects their need to establish trust and meet regulatory requirements before any transactions occur.\n\n<em>Notion</em> moves with remarkable efficiency through just three quick steps: asking how the user will use the app, capturing their interests, and sharing starter tips. The user then lands directly on the home screen—by far the fastest onboarding among the three apps. This approach reflects Notion's priority of getting users actively building in their workspace as quickly as possible, knowing that hands-on experience drives retention better than lengthy tutorials.`,
-		screenshots: []
+		screenshots: [
+			{
+				src: '/Onboarding/Instagram/Instagram (iOS) follow.png',
+				alt: 'Instagram follow suggestions',
+				thumbnail: '/Onboarding/Instagram/Instagram (iOS) follow.png',
+				label: '1 - Instagram',
+				annotation: 'Instagram prompts users to "Try following 5+ people" immediately, directly supporting their business model of rapid network growth and engagement. This feeds both the user\'s personalized content and Instagram\'s algorithmic data collection.'
+			},
+			{
+				src: '/Onboarding/Notion/Notion (iOS) notionAI.png',
+				alt: 'Notion AI feature',
+				thumbnail: '/Onboarding/Notion/Notion (iOS) notionAI.png',
+				label: '2 - Notion',
+				annotation: 'Notion introduces their AI assistant during onboarding, showcasing premium features that drive their freemium business model. Early exposure to powerful capabilities creates upgrade motivation while demonstrating long-term value.'
+			},
+			{
+				src: '/Onboarding/Venmo/Venmo (iOS) answers.png',
+				alt: 'Venmo usage questions',
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS) answers.png',
+				label: '3 - Venmo',
+				annotation: 'Venmo asks "How will you use Venmo?" upfront to understand user intent and gather usage data. This helps them optimize for transaction patterns while meeting compliance requirements for their payment business model.'
+			}
+		]
+	},
+
+	// Comparative analysis - Friction vs. Flow
+	{
+		appId: 'comparative',
+		dimensionId: 'friction-flow',
+		keyInsight: 'Strategic friction placement',
+		analysis: `<strong>Where is friction deliberately introduced (e.g., to ensure accuracy, encourage setup, verify identity)?</strong>\n\nThere is always an upfront friction of obtaining either an existing email or phone number at the start of an onboarding process across the 3 apps. There are clear questions that companies invest time and effort into asking the user why they downloaded the company's app, but it's not always entirely clear if the user experience changes drastically from answering those questions during the onboarding.\n\n<strong>Where is friction minimized to get users into the app quickly?</strong>\n\nThe common use case of obtaining email addresses has led to widespread adoption of sign in tools from major providers such as Google and Apple. This usually helps to save on time and kills the most boring parts of the onboarding process. I also noticed "Skip" or "Not now" buttons being incorporated into key parts of the onboarding process like remembering login information or getting recommendations.`,
+		screenshots: [
+			{
+				src: '/Onboarding/Instagram/Instagram (iOS) agree.png',
+				alt: 'Instagram terms agreement',
+				thumbnail: '/Onboarding/Instagram/Instagram (iOS) agree.png',
+				label: '1 - Instagram',
+				annotation: 'Instagram introduces deliberate friction with terms and policies agreement, requiring users to acknowledge rules before proceeding. This friction serves both legal compliance and sets expectations for platform behavior.'
+			},
+			{
+				src: '/Onboarding/Notion/Notion (iOS) interest.png',
+				alt: 'Notion interest selection',
+				thumbnail: '/Onboarding/Notion/Notion (iOS) interest.png',
+				label: '2 - Notion',
+				annotation: 'Notion asks users about their interests to personalize the experience, but minimizes friction by allowing multiple selections and making the process feel optional rather than mandatory.'
+			},
+			{
+				src: '/Onboarding/Venmo/Venmo (iOS) legal.png',
+				alt: 'Venmo legal information',
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS) legal.png',
+				label: '3 - Venmo',
+				annotation: 'Venmo introduces necessary friction with legal disclosures and fee information, meeting regulatory requirements while transparently communicating financial terms before users can transact.'
+			},
+			{
+				src: '/Onboarding/Instagram/Instagram (iOS) fbSuggest.png',
+				alt: 'Instagram Facebook suggestions',
+				thumbnail: '/Onboarding/Instagram/Instagram (iOS) fbSuggest.png',
+				label: '4 - Instagram',
+				annotation: 'Instagram minimizes friction by offering Facebook connection for instant friend suggestions, making it easy to build a network quickly. The "Skip" option ensures users never feel forced into linking accounts.'
+			},
+			{
+				src: '/Onboarding/Notion/Notion (iOS) home.png',
+				alt: 'Notion home screen',
+				thumbnail: '/Onboarding/Notion/Notion (iOS) home.png',
+				label: '5 - Notion',
+				annotation: 'Notion gets users to the home screen quickly, minimizing onboarding friction to let users start building immediately. The clean workspace with templates and guidance balances speed with helpful structure.'
+			},
+			{
+				src: '/Onboarding/Venmo/Venmo (iOS) allow noti.png',
+				alt: 'Venmo notification permission',
+				thumbnail: '/Onboarding/Venmo/Venmo (iOS) allow noti.png',
+				label: '6 - Venmo',
+				annotation: 'Venmo minimizes friction on notification permissions by making it optional and clearly explaining the value ("Get notified when you receive money"). Users can decline without feeling like they\'re missing core functionality.'
+			}
+		]
 	},
 
 	// Instagram analyses
