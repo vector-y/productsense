@@ -8,10 +8,10 @@ export default function Home() {
 			<Hero />
 
 			{/* Onboarding Experiences Accordion */}
-			<ShipProductsExample />
+			{/* <ShipProductsExample /> */}
 
 			{/* Search & Browsing Experiences Accordion */}
-			<SearchBrowsingExample />
+			{/* <SearchBrowsingExample /> */}
 
 			<Footer />
 		</div>

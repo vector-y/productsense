@@ -196,6 +196,15 @@ export const analysisContent: AnalysisContent[] = [
 		]
 	},
 
+	// Comparative analysis - Business Model
+	{
+		appId: 'comparative',
+		dimensionId: 'business-model',
+		keyInsight: 'Business priorities shape onboarding flow',
+		analysis: `<strong>Business model priorities</strong>\n\n<ul>\n<li><em>Instagram</em>: needs rapid engagement and network growth</li>\n<li><em>Notion</em>: needs effective setup for retention</li>\n<li><em>Venmo</em>: needs verified identity and trust for transactions</li>\n</ul>\n\n<strong>How do onboarding choices directly reflect these priorities?</strong>\n\n<em>Instagram</em> prioritizes network building by prompting new users to follow 5 people immediately. Each person they follow has a more established profile, providing data points about the user's interests. This initial follow action serves dual purposes: it populates the user's feed with content to engage with right away, while giving Instagram's algorithm early signals to personalize future recommendations.\n\n<em>Venmo</em> balances customization with compliance by opening with "How will you use Venmo?" to gather usage intent, then immediately presenting legal information and verification requirements. This sequence reflects their need to establish trust and meet regulatory requirements before any transactions occur.\n\n<em>Notion</em> moves with remarkable efficiency through just three quick steps: asking how the user will use the app, capturing their interests, and sharing starter tips. The user then lands directly on the home screen—by far the fastest onboarding among the three apps. This approach reflects Notion's priority of getting users actively building in their workspace as quickly as possible, knowing that hands-on experience drives retention better than lengthy tutorials.`,
+		screenshots: []
+	},
+
 	// Instagram analyses
 	{
 		appId: 'instagram',
