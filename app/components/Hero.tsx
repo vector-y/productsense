@@ -51,25 +51,7 @@ export function Hero() {
 			<Dialog.Portal>
 				<Dialog.Overlay className="modal-overlay" />
 				<Dialog.Content className="modal-content">
-					<Dialog.Close asChild>
-						<button
-							className="absolute top-6 left-6 w-11 h-11 sm:w-10 sm:h-10 flex items-center justify-center rounded-lg text-neutral-400 hover:text-neutral-900 hover:bg-neutral-100 transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2"
-							aria-label="Close dialog"
-						>
-							<svg
-								className="w-5 h-5"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
-								strokeWidth={2}
-								aria-hidden="true"
-							>
-								<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-							</svg>
-						</button>
-					</Dialog.Close>
-
-					<Dialog.Title className="text-2xl font-medium text-neutral-900 mt-12 mb-6">
+					<Dialog.Title className="text-2xl font-medium text-neutral-900 mb-6">
 						Choose Your Path
 					</Dialog.Title>
 
