@@ -20,6 +20,7 @@ export interface Screenshot {
 	alt: string;
 	thumbnail: string;
 	annotation?: string;
+	label?: string;
 }
 
 export interface AnalysisContent {
