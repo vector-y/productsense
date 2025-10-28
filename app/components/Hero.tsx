@@ -16,6 +16,7 @@ export function Hero() {
 		<section className="pt-32 pb-24 lg:pt-48 lg:pb-32">
 			<div className="max-w-7xl mx-auto px-6 lg:px-12">
 				<div className="space-y-8">
+					<p className="inline-block text-lg text-neutral-600 border border-neutral-300 px-3 py-1 rounded-full mb-2">Victor Tran</p>
 					<h1 className="tracking-tight text-neutral-900">
 						Building Your<br />Product Sense
 					</h1>

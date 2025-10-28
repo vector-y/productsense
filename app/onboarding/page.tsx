@@ -19,6 +19,7 @@ export default function OnboardingPage() {
 						Comparing onboarding experiences across Instagram, Notion, and Venmo.
 						How does each app balance information gathering with immediate value delivery?
 						What do their onboarding flows reveal about their business priorities?
+					These design choices in the first minutes expose fundamental assumptions about what users need, what they'll tolerate, and where the product derives its competitive advantage.
 					</p>
 				</div>
 			</div>
@@ -36,6 +37,7 @@ export default function OnboardingPage() {
 							<strong> Instagram minimizes friction everywhere</strong>, optimizing for rapid network growth by getting users to follow 5+ people immediately and consume content within seconds.
 							<strong> Notion embraces productive setup friction</strong>, asking about use cases and interests to deliver personalized templates that get users building in their workspace as quickly as possible.
 							<strong> Venmo manages unavoidable regulatory friction</strong> by breaking identity verification into clear stages while using playful design to maintain a casual, social tone despite asking for sensitive financial information.
+						Each friction type serves its product: Instagram's zero-friction approach works because the content itself is the value proposition. Notion's setup friction pays dividends by creating a personalized workspace users feel invested in from day one. Venmo's regulatory friction is unavoidable but demonstrates trustworthiness, which is essential for handling money between friends.
 						</p>
 						<p>
 							The fundamental tension: balancing <em>speed to value</em> versus <em>necessary setup</em>.
@@ -43,6 +45,7 @@ export default function OnboardingPage() {
 							Notion assumes users need structured workspace setup to unlock long-term productivity value.
 							Venmo assumes users will tolerate extensive verification because they need what only Venmo provides: widespread, social peer-to-peer payments.
 							Each reflects its business model: engagement time, retention through investment, and transaction trust.
+						But each assumption carries risk: Instagram loses users who want customization before consuming. Notion loses users who just want to try it quickly without commitment. Venmo loses users who lack patience for verification, even if they need peer-to-peer payments.
 						</p>
 					</div>
 				</div>

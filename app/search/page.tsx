@@ -19,6 +19,7 @@ export default function SearchPage() {
 						Compare how Netflix (recommendation-heavy), YouTube (search + algorithm), and Airbnb (filter-heavy browsing) help users find content.
 						Each approach serves different business models—Netflix needs engagement time, YouTube needs ad inventory, Airbnb needs booking conversion.
 						How do these discovery patterns shape user choice and agency?
+					The way products present options fundamentally changes how users feel about their decisions and whether they trust they found the right thing.
 					</p>
 				</div>
 			</div>
@@ -39,6 +40,7 @@ export default function SearchPage() {
 							while still surfacing algorithmic suggestions on the home feed where most engagement happens.
 							<strong> Airbnb flips the model</strong> by putting structured user agency first, with beautifully designed filters for Where/When/Who
 							that empower users to convert interest directly into bookings.
+						Visual design reinforces each strategy: Netflix uses large, immersive thumbnails that invite browsing over searching. YouTube balances a prominent search bar with an endless feed designed for passive consumption. Airbnb's interface feels more like a tool than a feed, with clear input fields and visual filters that make complex queries feel simple.
 						</p>
 						<p>
 							The fundamental tension across all three: how much to <em>guide</em> versus how much to <em>empower</em>?
@@ -46,6 +48,7 @@ export default function SearchPage() {
 							YouTube supports users who may search, browse, or follow creators across all three modes.
 							Airbnb assumes users have clear needs and need tools to express them confidently.
 							Each reflects its business model: engagement time, ad inventory, and conversion confidence.
+						The trade-offs are real: Netflix sacrifices user control for streamlined curation, risking choice paralysis when recommendations miss. YouTube sacrifices algorithmic purity for user agency, spreading engagement across search and browse modes. Airbnb sacrifices serendipity for precision, risking that users miss interesting options outside their explicit filters.
 						</p>
 					</div>
 				</div>
