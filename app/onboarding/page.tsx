@@ -25,12 +25,26 @@ export default function OnboardingPage() {
 
 			{/* Main Content */}
 			<div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 lg:py-16">
-				{/* View Description */}
-				<div className="mb-8">
-					<p className="text-neutral-600 text-base">
-						Compare how all three apps approach each aspect of onboarding.
-						Click on a dimension below to read and learn more about my analysis.
-					</p>
+				{/* Comparative Summary */}
+				<div className="mb-12 bg-white rounded-lg border border-neutral-200 p-8">
+					<h2 className="text-2xl font-semibold text-neutral-900 mb-4">
+						Summary
+					</h2>
+					<div className="space-y-4 text-neutral-600 leading-relaxed">
+						<p>
+							These three apps reveal fundamentally different approaches to welcoming new users.
+							<strong> Instagram minimizes friction everywhere</strong>, optimizing for rapid network growth by getting users to follow 5+ people immediately and consume content within seconds.
+							<strong> Notion embraces productive setup friction</strong>, asking about use cases and interests to deliver personalized templates that get users building in their workspace as quickly as possible.
+							<strong> Venmo manages unavoidable regulatory friction</strong> by breaking identity verification into clear stages while using playful design to maintain a casual, social tone despite asking for sensitive financial information.
+						</p>
+						<p>
+							The fundamental tension: balancing <em>speed to value</em> versus <em>necessary setup</em>.
+							Instagram assumes users want immediate content consumption and defers all customization.
+							Notion assumes users need structured workspace setup to unlock long-term productivity value.
+							Venmo assumes users will tolerate extensive verification because they need what only Venmo provides: widespread, social peer-to-peer payments.
+							Each reflects its business model: engagement time, retention through investment, and transaction trust.
+						</p>
+					</div>
 				</div>
 
 				{/* Dimension Accordion View */}

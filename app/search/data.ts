@@ -19,61 +19,143 @@ export const apps: App[] = [
 		id: 'airbnb',
 		name: 'Airbnb',
 		icon: '/airbnb.png'
+	},
+	{
+		id: 'comparative',
+		name: 'Comparative Analysis',
+		icon: '/comparative.png'
 	}
 ];
 
 export const dimensions: Dimension[] = [
 	{
-		id: 'discovery-patterns',
+		id: 'user-control-platform-control',
 		number: 1,
-		title: 'Discovery patterns & user control',
+		title: 'User Control vs. Platform Control',
 		description: 'Where does the platform guide the user (recommendations, rankings) versus where does the user control discovery (search, filters)? How does this balance affect the feeling of agency?'
 	},
 	{
-		id: 'choice-architecture',
+		id: 'decision-making-experience',
 		number: 2,
-		title: 'Choice architecture',
+		title: 'Decision-Making Experience',
 		description: 'How do UI patterns like infinite scroll, filter trees, and "because you watched…" influence decision quality? What does the interface reveal about how the platform wants users to make choices?'
 	},
 	{
-		id: 'business-alignment',
-		number: 3,
-		title: 'Business model alignment',
-		description: 'How do discovery patterns serve business goals? Netflix needs engagement time, YouTube needs ad inventory, Airbnb needs booking conversion—how does each platform\'s discovery design reflect these priorities?'
-	},
-	{
 		id: 'user-psychology',
-		number: 4,
-		title: 'User psychology',
+		number: 3,
+		title: 'User Psychology',
 		description: 'Where do you see design for serendipity versus design for goal-directed search? How do discovery patterns impact trust, satisfaction, or frustration?'
-	},
-	{
-		id: 'agency-nudging',
-		number: 5,
-		title: 'Agency vs. nudging',
-		description: 'How does the discovery pattern make users feel? Empowered to find what they want, overwhelmed by options, or subtly guided toward platform-preferred choices?'
 	}
 ];
 
 export const analysisContent: AnalysisContent[] = [
+	// Comparative analysis
+	{
+		appId: 'comparative',
+		dimensionId: 'user-control-platform-control',
+		keyInsight: 'Platform guidance vs. user agency',
+		analysis: '<strong>Where does the platform guide the user (recommendations, rankings) versus where does the user control discovery (search, filters)?</strong>\n\n<em>Netflix</em> generally tries to guide users to a primary recommendation, and a long list of suggestions below "For You" if you\'re not happy with the first option. Their app optimizes for a lot of variety by having a large volume of choices up front. Netflix uses top hits as one of their primary ways to help suggest ideas for what to watch next. User control is also pretty nuanced by even allowing users to search by the actor\'s name, not just key words in a show/movie. Filters based on genre are also prominently displayed and available for users to take advantage of.\n\nComparatively, <em>YouTube</em> has more focus on one media source at a time as opposed to Netflix. There\'s a push for YouTube shorts to be featured, with 4 shorts being highlighted at the top, community posts, and of course videos. There\'s a pattern of 4 shorts, a community post, and 3 videos for the first two full screen scrolls. From there, the content becomes a bit less relevant since a majority of interactions will happen within those first 2 major scroll areas. User control is clear with the search bar input and is one of the most important parts of the app. There is a native voice input in the app itself and a search history to quickly jump back to previous search results. Users can also filter on a wide range of ideas from Relevance, Upload date, View count, Rating, etc. that will cover most topics and general ideas people are looking for.\n\n<em>Airbnb</em> stands out because it isn\'t media they\'re helping people search, it\'s really about experiences and stays. The app covers the 3 big questions of "Where?" "When?" "Who?", and provides beautifully crafted components to help make the selection process fun. Everything from selecting the city, to picking out the date range from days, to months, or even "flexible". Airbnb helps suggest stays that range from the weekend, to the week, or even a month. Users have heavy agency over how they might want to filter results which empowers them to help convert initial interests to successfully booking a trip.\n\n<strong>How does this balance affect the feeling of agency?</strong>\n\nAlgorithms will always have a big influence over how layouts are presented to the user, but agency features are what helps convert user interest to action. Agency seems a bit removed when math is being used to determine what you want to see next, but most people are happy with getting recommendations. The problematic aspect would be some of the biases that go into those algorithms, and making sure they\'re objective and not projecting ideas that the user otherwise would not want to see. I think being able to filter and fine tune the results will always be the key to having happy users stay on the platform longer to get what they were searching for.',
+		screenshots: [
+			{
+				src: '/Search/YouTube/YouTube (iOS).png',
+				alt: 'YouTube interface showing search-first design',
+				thumbnail: '/Search/YouTube/YouTube (iOS).png',
+				label: '1 - YouTube',
+				annotation: 'YouTube features 4 shorts at top, followed by community posts and videos in first 2 scrolls. Search bar is prominent with native voice input and search history. Users can filter by Relevance, Upload date, View count, Rating, and more.'
+			},
+			{
+				src: '/Search/Netflix/Netflix (iOS).png',
+				alt: 'Netflix interface showing guided discovery',
+				thumbnail: '/Search/Netflix/Netflix (iOS).png',
+				label: '2 - Netflix',
+				annotation: 'Netflix guides users to primary recommendations with a long list of "For You" suggestions. Top hits help suggest what to watch next. Genre filters are prominently displayed, and search allows queries by actor name, not just keywords.'
+			},
+			{
+				src: '/Search/Airbnb/Airbnb (iOS) Where.png',
+				alt: 'Airbnb interface showing Where selection',
+				thumbnail: '/Search/Airbnb/Airbnb (iOS) Where.png',
+				label: '3 - Airbnb',
+				annotation: 'Airbnb focuses on experiences and stays, covering "Where?" "When?" "Who?" with beautifully crafted components. Users can select cities, date ranges (days, months, "flexible"), and filter extensively to convert interest into bookings.'
+			}
+		]
+	},
+	{
+		appId: 'comparative',
+		dimensionId: 'decision-making-experience',
+		keyInsight: 'Choice architecture shapes user experience',
+		analysis: '<strong>How does the discovery pattern make users feel? Empowered, overwhelmed, or nudged?</strong>\n\n<em>Netflix</em> is definitely overwhelming with its large volume, <em>YouTube</em> is more empowering for the user since there is less being thrown at you at once. <em>Airbnb</em>\'s suggestions feel more like nudges that lead to empowerment through the amazing filtering tools that are available.\n\n<strong>How does choice architecture (e.g., infinite scroll, filter trees, "because you watched…") influence decision quality?</strong>\n\n<em>Netflix</em> has a heavy reliance on previously watched shows to help build a profile of what tastes and preferences you have for your media. It\'s presented in a way where ratings have a greater influence on what decision is made next by the user.\n\n<em>YouTube</em>\'s infinite scroll is there, but people usually don\'t utilize it past the first couple of scrolls because the most interesting content usually sits on top.\n\n<em>Airbnb</em> has a very well thought out filtering system that gets people exactly what they want. This ability to fine tune and present it beautifully is what helps them stand out against the competition of traditional hotel stays.',
+		screenshots: [
+			{
+				src: '/Search/Airbnb/Airbnb (iOS).png',
+				alt: 'Airbnb choice architecture',
+				thumbnail: '/Search/Airbnb/Airbnb (iOS).png',
+				label: '1 - Airbnb',
+				annotation: 'Airbnb\'s interface presents curated property suggestions while offering extensive filter controls—creating initial nudges that quickly transform into user empowerment. The beautifully designed filtering system (price, amenities, property type, location) lets users fine-tune results with precision, converting browsing overwhelm into confident decision-making that outpaces traditional hotel search experiences.'
+			},
+			{
+				src: '/Search/Netflix/Netflix (iOS) contextual.png',
+				alt: 'Netflix contextual recommendations',
+				thumbnail: '/Search/Netflix/Netflix (iOS) contextual.png',
+				label: '2 - Netflix',
+				annotation: 'Netflix\'s contextual recommendation rows ("Because you watched...") make algorithmic personalization visible, building user profiles from viewing history. Prominent rating displays (thumbs up/down, match percentages) shift decision-making power toward Netflix\'s algorithmic judgments rather than objective metadata, creating a choice architecture where past behavior heavily influences future decisions.'
+			},
+			{
+				src: '/Search/YouTube/YouTube (iOS) result.png',
+				alt: 'YouTube search interface',
+				thumbnail: '/Search/YouTube/YouTube (iOS) result.png',
+				label: '3 - YouTube',
+				annotation: 'YouTube\'s search results concentrate value at the top through algorithmic relevance ranking combined with engagement metrics (view counts, upload dates, verified badges). This front-loaded design means users rarely scroll beyond the first few results—the most interesting content sits prominently above the fold, reducing decision fatigue but also limiting serendipitous discovery deeper in results.'
+			}
+		]
+	},
+	{
+		appId: 'comparative',
+		dimensionId: 'user-psychology',
+		keyInsight: 'Balancing serendipity and goal-directed search',
+		analysis: '<strong>Where do you see design for serendipity vs. design for goal-directed search?</strong>\n\nI see serendipity in the frosted glass background from <em>Netflix\'s</em> genre list people browse from, the large wheel selection component in <em>Airbnb\'s</em> month filter, and the fun illustrations included in the boring results like "No results found" from <em>YouTube</em>. With more goal directed searching, I found the search bar to be essential across all 3 apps. Goal directed searches are usually pretty straightforward with a query and then the ability to fine tune with filters before or after the fact (mostly after, but Airbnb is proactive).\n\n<strong>How do discovery patterns impact trust, satisfaction, or frustration?</strong>\n\nDiscovery patterns might turn people away if the algorithm comes up with bad suggestions, and to have it even happen once is very impactful on user trust. There starts to be an association between perceived value and reality when user expectations are subverted to make their lives more difficult. I find that a solid discovery pattern changes as their user base changes over time, and to bring in new features and ideas there must always be a way to develop and test out these patterns effectively.',
+		screenshots: [
+			{
+				src: '/Search/Netflix/Netflix (iOS) cList.png',
+				alt: 'Netflix genre list with frosted glass background',
+				thumbnail: '/Search/Netflix/Netflix (iOS) cList.png',
+				label: '1 - Netflix',
+				annotation: 'Netflix\'s genre category list features a frosted glass background effect that creates visual depth while users browse. This serendipitous browsing experience encourages exploration across different content categories, making the discovery process feel more engaging and less utilitarian.'
+			},
+			{
+				src: '/Search/Airbnb/Airbnb (iOS) MonthM.png',
+				alt: 'Airbnb month wheel selector',
+				thumbnail: '/Search/Airbnb/Airbnb (iOS) MonthM.png',
+				label: '2 - Airbnb',
+				annotation: 'Airbnb\'s large wheel selection component for choosing trip duration (showing "3 months") turns a functional filter into a delightful interaction. The tactile, visual design makes selecting dates feel playful rather than purely transactional, balancing goal-directed search with serendipitous discovery.'
+			},
+			{
+				src: '/Search/YouTube/YouTube (iOS) not found.png',
+				alt: 'YouTube no results found with fun illustration',
+				thumbnail: '/Search/YouTube/YouTube (iOS) not found.png',
+				label: '3 - YouTube',
+				annotation: 'YouTube\'s "No results found" page includes a colorful, whimsical illustration of a person with a camera and telescope. This design choice transforms a potentially frustrating dead-end into a lighter moment, maintaining user engagement even when search fails and encouraging users to try different keywords.'
+			}
+		]
+	},
+
 	// Netflix analyses
 	{
 		appId: 'netflix',
-		dimensionId: 'discovery-patterns',
-		keyInsight: 'Algorithm-first discovery',
-		analysis: 'Netflix employs a heavily platform-controlled discovery model where algorithmic recommendations dominate the entire browsing experience. The home screen presents personalized rows like "Top Picks for You," "Trending Now," and "Because You Watched," with virtually no neutral browsing options. Search functionality exists but is deliberately de-emphasized—tucked away in the navigation and offering limited filtering beyond basic genre categories.\n\nThis discovery pattern reflects a fundamental design philosophy: Netflix believes it knows what you want to watch better than you do. User control is minimal by design. There are no browse-by-release-date options, no comprehensive genre trees, and no ability to see "all movies" or "all shows." Every content surface is algorithmically curated based on viewing history, ratings, and behavior patterns across millions of users. The platform guides users through personalized corridors rather than offering open exploration.\n\nThe effect on user agency is subtle but significant. Users aren\'t making choices from an objective catalog—they\'re selecting from a pre-filtered set of recommendations. This feels convenient when it works ("Netflix just gets me") but can feel limiting when you want to browse outside your established patterns or discover something genuinely unexpected.',
+		dimensionId: 'user-control-platform-control',
+		keyInsight: 'Guided discovery with nuanced control',
+		analysis: 'Netflix generally tries to guide users to a primary recommendation, and a long list of suggestions below "For You" if you\'re not happy with the first option. Their app optimizes for a lot of variety by having a large volume of choices up front. Netflix uses top hits as one of their primary ways to help suggest ideas for what to watch next.\n\nUser control is also pretty nuanced by even allowing users to search by the actor\'s name, not just key words in a show/movie. Filters based on genre are also prominently displayed and available for users to take advantage of.\n\n<strong>How does this balance affect the feeling of agency?</strong>\n\nAlgorithms will always have a big influence over how layouts are presented to the user, but agency features are what helps convert user interest to action. Agency seems a bit removed when math is being used to determine what you want to see next, but most people are happy with getting recommendations. The problematic aspect would be some of the biases that go into those algorithms, and making sure they\'re objective and not projecting ideas that the user otherwise would not want to see. I think being able to filter and fine tune the results will always be the key to having happy users stay on the platform longer to get what they were searching for.',
 		screenshots: [
 			{
 				src: '/Search/Netflix/Netflix (iOS).png',
-				alt: 'Netflix discovery interface',
+				alt: 'Netflix interface showing guided discovery',
 				thumbnail: '/Search/Netflix/Netflix (iOS).png',
-				annotation: 'Home screen dominated by algorithmic rows like "Top Picks for You" and "Because You Watched." Search is tucked away in the navigation. No neutral browsing options or comprehensive catalog access—every surface is personalized.'
+				annotation: 'Netflix guides users to primary recommendations with a long list of "For You" suggestions. Top hits help suggest what to watch next. Genre filters are prominently displayed, and search allows queries by actor name, not just keywords.'
 			}
 		]
 	},
 	{
 		appId: 'netflix',
-		dimensionId: 'choice-architecture',
+		dimensionId: 'decision-making-experience',
 		analysis: 'Netflix\'s choice architecture is meticulously designed to minimize decision paralysis while maximizing engagement. The infinite scroll of personalized rows creates a "lean back" browsing experience where users can passively explore without the cognitive burden of active filtering. Each row is thematically organized but algorithmically populated—"Critically Acclaimed Dramas" sounds like a category, but it\'s actually a personalized selection.\n\nThe interface employs several persuasive patterns: auto-playing trailers grab attention as you browse, large preview cards with minimal text prioritize visual appeal over information density, and the "Top 10" lists leverage social proof to guide choices. The lack of release dates, ratings, or detailed metadata in browse views keeps users focused on Netflix\'s recommendations rather than objective criteria.\n\nThis architecture reveals Netflix\'s preferred user behavior: they want you browsing within their curated selections, not searching with intent. Decision-making feels effortless because options are pre-filtered, but this also means you\'re only seeing what Netflix chooses to show. The endless scroll can trigger "choice overload"—so many options yet nothing feels quite right—precisely because every option is algorithmically similar to your past behavior, creating a paradox of constrained variety.',
 		screenshots: [
 			{
@@ -81,20 +163,6 @@ export const analysisContent: AnalysisContent[] = [
 				alt: 'Netflix choice architecture',
 				thumbnail: '/Search/Netflix/Netflix (iOS).png',
 				annotation: 'Infinite scroll of personalized rows creates "lean back" browsing. Auto-playing trailers grab attention, large preview cards prioritize visuals over metadata. No release dates or ratings in browse view—keeps focus on Netflix\'s recommendations.'
-			}
-		]
-	},
-	{
-		appId: 'netflix',
-		dimensionId: 'business-alignment',
-		keyInsight: 'Optimized for watch time',
-		analysis: 'Netflix\'s business model is subscription-based with one clear goal: minimize churn by maximizing engagement. Every aspect of its discovery design serves this objective. Algorithmic recommendations aren\'t just convenience features—they\'re retention mechanisms. By showing users content they\'re statistically likely to watch and finish, Netflix increases the perceived value of the subscription and reduces cancellation likelihood.\n\nThe platform\'s refusal to offer comprehensive browsing or sorting options is strategic. If users could easily see everything available and realize they\'ve exhausted interesting content in their genres, they might cancel. Instead, the algorithmic feed creates the impression of endless relevant content by continuously resurfacing catalog items in new contexts ("Because You Watched," "Trending," "New Releases for You"). The same shows appear in multiple rows with different framing.\n\nAuto-play features—trailers while browsing, next episode countdowns—are aggressive retention tactics. Netflix profits from every additional minute watched because it strengthens habit formation and reduces the likelihood of subscription cancellation. Unlike ad-supported platforms, Netflix doesn\'t need diverse browsing patterns; it needs deep engagement with content that keeps users subscribed. The discovery design reflects this: it\'s optimized not for helping users find specific content, but for keeping them watching anything.',
-		screenshots: [
-			{
-				src: '/Search/Netflix/Netflix (iOS).png',
-				alt: 'Netflix business alignment',
-				thumbnail: '/Search/Netflix/Netflix (iOS).png',
-				annotation: 'Subscription model requires retention through engagement. Algorithmic recommendations maximize watch time to reduce churn. Same shows appear in multiple rows ("Trending," "Because You Watched") creating impression of endless content.'
 			}
 		]
 	},
@@ -111,39 +179,25 @@ export const analysisContent: AnalysisContent[] = [
 			}
 		]
 	},
-	{
-		appId: 'netflix',
-		dimensionId: 'agency-nudging',
-		keyInsight: 'Subtle guidance, limited agency',
-		analysis: 'Netflix\'s approach to user agency is sophisticated and subtle. Users rarely feel explicitly manipulated—there are no obvious "sponsored" placements or heavy-handed recommendations. Instead, agency is constrained through omission: you can\'t see what you don\'t see. The platform doesn\'t tell you what to watch; it simply limits your options to pre-selected recommendations, making the choice feel free even as it\'s heavily constrained.\n\nThe interface creates an illusion of abundant choice through visual density—rows upon rows of content—while actually narrowing selection through algorithmic filtering. Users feel empowered ("I\'m browsing all these options") without realizing they\'re seeing perhaps 5% of Netflix\'s catalog, selected specifically for them. The search function exists as a pressure valve for users who know exactly what they want, but it\'s deliberately secondary to the recommendation feed.\n\nThis creates a complex emotional experience. Users who align with Netflix\'s algorithmic profile feel served—the app "understands" their taste and makes discovery effortless. But users who don\'t fit neat algorithmic categories, or who want to explore beyond their established patterns, can feel constrained and frustrated. The platform nudges heavily toward engagement-optimized choices (shows you\'re likely to binge) over user-preferred choices (what you actually came to find), and this misalignment can erode trust over time even as it maximizes short-term watch time.',
-		screenshots: [
-			{
-				src: '/Search/Netflix/Netflix (iOS).png',
-				alt: 'Netflix agency and nudging',
-				thumbnail: '/Search/Netflix/Netflix (iOS).png',
-				annotation: 'Rows upon rows create illusion of abundant choice while showing only 5% of catalog. Algorithmic filtering constrains options subtly—users don\'t realize they\'re viewing pre-selected recommendations. Search exists as secondary pressure valve.'
-			}
-		]
-	},
 
 	// YouTube analyses
 	{
 		appId: 'youtube',
-		dimensionId: 'discovery-patterns',
-		keyInsight: 'Hybrid search-algorithm model',
-		analysis: 'YouTube strikes a deliberate balance between user-controlled search and platform-guided recommendations, creating a hybrid discovery model that serves multiple use cases. The home feed is algorithmically driven with personalized recommendations, but search is equally prominent—accessible from every screen with robust filtering, sorting, and refinement options. This dual approach accommodates both "lean back" passive browsing and "lean forward" active seeking.\n\nThe platform\'s recommendation algorithm is sophisticated and visible. The home feed presents "Recommended," the sidebar during video playback suggests related content, and the "Up next" autoplay queue creates continuous viewing paths. Unlike Netflix, YouTube shows algorithmic reasoning: "Because you watched," "From channels you follow," "Previously watched." This transparency creates a sense of partnership—the algorithm is helping, not controlling.\n\nUser control is substantial. You can search with intent, filter by upload date, sort by relevance or view count, browse channel pages chronologically, and maintain subscriptions that bypass the algorithm entirely. The discovery pattern reflects YouTube\'s dual nature as both entertainment platform and search engine. Users feel empowered to find specific content while still benefiting from algorithmic discovery for exploratory browsing.',
+		dimensionId: 'user-control-platform-control',
+		keyInsight: 'Search-first with curated content streams',
+		analysis: 'YouTube has more focus on one media source at a time as opposed to Netflix. There\'s a push for YouTube shorts to be featured, with 4 shorts being highlighted at the top, community posts, and of course videos. There\'s a pattern of 4 shorts, a community post, and 3 videos for the first two full screen scrolls. From there, the content becomes a bit less relevant since a majority of interactions will happen within those first 2 major scroll areas.\n\nUser control is clear with the search bar input and is one of the most important parts of the app. There is a native voice input in the app itself and a search history to quickly jump back to previous search results. Users can also filter on a wide range of ideas from Relevance, Upload date, View count, Rating, etc. that will cover most topics and general ideas people are looking for.\n\n<strong>How does this balance affect the feeling of agency?</strong>\n\nAlgorithms will always have a big influence over how layouts are presented to the user, but agency features are what helps convert user interest to action. Agency seems a bit removed when math is being used to determine what you want to see next, but most people are happy with getting recommendations. The problematic aspect would be some of the biases that go into those algorithms, and making sure they\'re objective and not projecting ideas that the user otherwise would not want to see. I think being able to filter and fine tune the results will always be the key to having happy users stay on the platform longer to get what they were searching for.',
 		screenshots: [
 			{
 				src: '/Search/YouTube/YouTube (iOS).png',
-				alt: 'YouTube discovery patterns',
+				alt: 'YouTube interface showing search-first design',
 				thumbnail: '/Search/YouTube/YouTube (iOS).png',
-				annotation: 'Home feed shows algorithmic recommendations with visible reasoning ("Because you watched"). Search is equally prominent with robust filtering. Dual approach supports both passive browsing and active seeking. Transparency creates partnership feeling.'
+				annotation: 'YouTube features 4 shorts at top, followed by community posts and videos in first 2 scrolls. Search bar is prominent with native voice input and search history. Users can filter by Relevance, Upload date, View count, Rating, and more.'
 			}
 		]
 	},
 	{
 		appId: 'youtube',
-		dimensionId: 'choice-architecture',
+		dimensionId: 'decision-making-experience',
 		analysis: 'YouTube\'s choice architecture reveals a sophisticated understanding of different user modes and intentions. The home feed uses infinite scroll with large thumbnails and algorithmic recommendations, optimized for casual browsing. But crucially, YouTube offers escape routes from the algorithmic feed: prominent search, channel subscriptions with chronological ordering, and playlist functionality all provide structured alternatives to passive scrolling.\n\nThe interface makes algorithmic influence visible through labels and explanations, allowing users to understand and adjust their discovery experience. "Not interested" and "Don\'t recommend channel" options give users control over the algorithm\'s evolution. Video preview cards include substantial metadata—view counts, upload dates, channel verification—allowing users to make informed decisions using both algorithmic and objective criteria.\n\nThis architecture supports diverse decision-making patterns. Users seeking specific content can search and filter precisely. Users exploring a topic can start with search and follow algorithmic suggestions. Users wanting creator-driven content can rely on subscriptions. The platform accommodates goal-directed search, algorithmic discovery, and creator-follower relationships simultaneously. However, the autoplay defaults and persuasive "up next" queue can still override user intention, pulling browsers into extended viewing sessions they didn\'t initially plan.',
 		screenshots: [
 			{
@@ -151,19 +205,6 @@ export const analysisContent: AnalysisContent[] = [
 				alt: 'YouTube choice architecture',
 				thumbnail: '/Search/YouTube/YouTube (iOS).png',
 				annotation: 'Video cards include substantial metadata: view counts, upload dates, channel verification. "Not interested" and "Don\'t recommend channel" options give users algorithm control. Multiple escape routes from algorithmic feed: search, subscriptions, playlists.'
-			}
-		]
-	},
-	{
-		appId: 'youtube',
-		dimensionId: 'business-alignment',
-		analysis: 'YouTube\'s business model depends on ad impressions, which requires maximizing both watch time and content diversity. This creates different incentives than subscription services: YouTube benefits from varied browsing patterns that expose users to different ad categories and creator niches. The hybrid discovery model directly serves this goal by supporting multiple content consumption patterns.\n\nAlgorithmic recommendations drive engagement and watch time—the more videos you watch, the more ads YouTube serves. But robust search and channel subscriptions keep creators invested in the platform by providing direct audience access, which sustains content supply. YouTube needs both algorithmic and organic discovery to maintain its content ecosystem. The platform can\'t over-optimize for algorithmic control without alienating creators who rely on subscriber bases.\n\nThe "up next" autoplay feature is a pure monetization mechanism, designed to keep users watching video after video, generating continuous ad inventory. However, YouTube also supports features that seemingly reduce watch time—like quality search, chronological subscriptions, and detailed filtering—because they sustain long-term platform health by maintaining creator incentives and user trust. The business model requires a delicate balance: enough algorithmic guidance to maximize watch time, enough user control to maintain creator and viewer satisfaction.',
-		screenshots: [
-			{
-				src: '/Search/YouTube/YouTube (iOS).png',
-				alt: 'YouTube business model alignment',
-				thumbnail: '/Search/YouTube/YouTube (iOS).png',
-				annotation: 'Ad-supported model benefits from varied browsing exposing users to different ad categories. "Up next" autoplay maximizes continuous viewing and ad inventory. Robust search and subscriptions keep creators invested, sustaining content supply.'
 			}
 		]
 	},
@@ -181,38 +222,25 @@ export const analysisContent: AnalysisContent[] = [
 			}
 		]
 	},
-	{
-		appId: 'youtube',
-		dimensionId: 'agency-nudging',
-		analysis: 'YouTube\'s approach to agency is more transparent than most platforms. Users can understand how the algorithm works, adjust their subscriptions, use search extensively, and even train the algorithm through explicit feedback ("not interested," "don\'t recommend"). This creates a genuine sense of partnership—the platform provides powerful discovery tools while still respecting user intention when clearly expressed.\n\nHowever, the platform still nudges heavily through autoplay, "up next" recommendations, and the visually prominent algorithmic feed. The default settings favor continuous watching over intentional viewing. Users must actively resist these nudges by disabling autoplay, manually returning to search, or strictly using subscriptions. The path of least resistance always leads to algorithm-guided extended viewing.\n\nThis creates an experience where users feel empowered in the moment (I can search for exactly what I want) but may later realize they spent far more time than intended following algorithmic suggestions. The agency is real but requires active assertion against default behaviors. Users who passively browse will find themselves guided into extended viewing sessions optimized for platform metrics rather than personal goals. YouTube provides the tools for user control but structures the default experience around platform-guided discovery.',
-		screenshots: [
-			{
-				src: '/Search/YouTube/YouTube (iOS).png',
-				alt: 'YouTube agency vs nudging',
-				thumbnail: '/Search/YouTube/YouTube (iOS).png',
-				annotation: 'Transparent algorithm with explicit feedback options ("not interested"). Users can search extensively, use subscriptions, train the algorithm. But autoplay and "up next" still nudge toward extended viewing. Agency requires active assertion against defaults.'
-			}
-		]
-	},
 
 	// Airbnb analyses
 	{
 		appId: 'airbnb',
-		dimensionId: 'discovery-patterns',
-		keyInsight: 'User-driven filter-heavy search',
-		analysis: 'Airbnb employs a fundamentally different discovery model from entertainment platforms: user-controlled, filter-heavy search designed for goal-directed browsing. Users arrive with specific intentions (location, dates, budget, guest count) and the platform provides extensive filtering tools to narrow results. There are no algorithmic "Top Picks" without user input—discovery begins with user parameters, not platform recommendations.\n\nThe search and filtering interface is extraordinarily detailed: price range, property type, amenities (pool, wifi, kitchen), house rules (pet-friendly, smoking allowed), accessibility features, and more. Users can layer multiple filters to create highly specific queries. Map-based browsing provides geographical control, allowing users to explore by neighborhood rather than accepting algorithmic suggestions. Sorting options (price, rating, distance) give users multiple lenses for evaluating results.\n\nPlatform guidance exists but is secondary and contextual. "Guest favorite" badges, Superhost indicators, and review scores provide algorithmic signals, but they enhance user-driven search rather than replacing it. Airbnb\'s recently viewed and saved listings help users track their own discovery process, but there\'s no imposed recommendation feed. This pattern reflects Airbnb\'s transactional nature: users know what they need (a place to stay), and the platform facilitates finding it rather than suggesting what to search for.',
+		dimensionId: 'user-control-platform-control',
+		keyInsight: 'Experience-first with heavy user agency',
+		analysis: 'Airbnb stands out because it isn\'t media they\'re helping people search, it\'s really about experiences and stays. The app covers the 3 big questions of "Where?" "When?" "Who?", and provides beautifully crafted components to help make the selection process fun. Everything from selecting the city, to picking out the date range from days, to months, or even "flexible". Airbnb helps suggest stays that range from the weekend, to the week, or even a month. Users have heavy agency over how they might want to filter results which empowers them to help convert initial interests to successfully booking a trip.\n\n<strong>How does this balance affect the feeling of agency?</strong>\n\nAlgorithms will always have a big influence over how layouts are presented to the user, but agency features are what helps convert user interest to action. Agency seems a bit removed when math is being used to determine what you want to see next, but most people are happy with getting recommendations. The problematic aspect would be some of the biases that go into those algorithms, and making sure they\'re objective and not projecting ideas that the user otherwise would not want to see. I think being able to filter and fine tune the results will always be the key to having happy users stay on the platform longer to get what they were searching for.',
 		screenshots: [
 			{
-				src: '/Search/Airbnb/Airbnb (iOS).png',
-				alt: 'Airbnb discovery patterns',
-				thumbnail: '/Search/Airbnb/Airbnb (iOS).png',
-				annotation: 'Discovery begins with user parameters: location, dates, budget, guest count. Extensive filtering tools (amenities, property type, house rules) allow highly specific queries. Map-based browsing provides geographical control. No algorithmic "Top Picks" without input.'
+				src: '/Search/Airbnb/Airbnb (iOS) Where.png',
+				alt: 'Airbnb interface showing Where selection',
+				thumbnail: '/Search/Airbnb/Airbnb (iOS) Where.png',
+				annotation: 'Airbnb focuses on experiences and stays, covering "Where?" "When?" "Who?" with beautifully crafted components. Users can select cities, date ranges (days, months, "flexible"), and filter extensively to convert interest into bookings.'
 			}
 		]
 	},
 	{
 		appId: 'airbnb',
-		dimensionId: 'choice-architecture',
+		dimensionId: 'decision-making-experience',
 		keyInsight: 'Filters for confident booking',
 		analysis: 'Airbnb\'s choice architecture is designed to support confident, high-stakes decision-making. Unlike entertainment platforms where choosing wrong means wasting 20 minutes, choosing the wrong accommodation affects an entire trip. The interface reflects this by providing dense information and extensive filtering to reduce uncertainty and support rational evaluation.\n\nProperty cards display critical decision-making information upfront: total price (not just per-night), location on map, rating with review count, and high-quality photos. Detail pages provide exhaustive information: amenities, house rules, cancellation policy, host profile, detailed reviews, and calendar availability. This information density serves decisive browsing—users can eliminate options confidently based on objective criteria.\n\nThe filtering interface uses a progressive disclosure pattern. Basic filters (price, dates, guests) appear first, with advanced filters (amenities, property type, house rules) available through expandable menus. This architecture recognizes that some users need simple filtering while others require precise control. The map view and list view offer different mental models for browsing—geographical context versus comparative evaluation—acknowledging that users approach spatial decisions differently. The architecture prioritizes enabling confident choices over minimizing cognitive effort.',
 		screenshots: [
@@ -226,19 +254,6 @@ export const analysisContent: AnalysisContent[] = [
 	},
 	{
 		appId: 'airbnb',
-		dimensionId: 'business-alignment',
-		analysis: 'Airbnb\'s business model depends on booking conversion: the platform takes a percentage of each transaction, so its discovery design must optimize for both browsing engagement and confident booking decisions. This creates different incentives than pure engagement platforms—Airbnb benefits from users making decisions quickly and confidently rather than browsing indefinitely.\n\nExtensive filtering serves conversion by helping users find appropriate matches quickly, reducing the frustration that leads to abandonment. Detailed property information and reviews build trust, addressing the unique risks of peer-to-peer accommodation booking. Transparent pricing (total cost shown upfront, fees clearly itemized) reduces booking friction by eliminating surprises at checkout. These features may slow initial browsing but increase conversion rates by building confidence.\n\nHowever, Airbnb also employs subtle conversion optimization: "Limited availability" messages create urgency, "Guest favorite" badges leverage social proof, and the platform highlights high-quality listings that are more likely to convert. Search result rankings balance user preferences with conversion likelihood—a purely user-optimized algorithm might show the cheapest options first, but Airbnb weights quality and host responsiveness to reduce booking failures and negative experiences that could reduce future bookings. The discovery design serves conversion while maintaining enough user control to preserve trust.',
-		screenshots: [
-			{
-				src: '/Search/Airbnb/Airbnb (iOS).png',
-				alt: 'Airbnb business model alignment',
-				thumbnail: '/Search/Airbnb/Airbnb (iOS).png',
-				annotation: 'Booking conversion model requires confident decisions. Extensive filtering reduces frustration and abandonment. Transparent pricing (total cost upfront, fees itemized) eliminates checkout surprises. "Limited availability" and "Guest favorite" badges create urgency and social proof.'
-			}
-		]
-	},
-	{
-		appId: 'airbnb',
 		dimensionId: 'user-psychology',
 		analysis: 'Airbnb\'s discovery design operates in a psychological space dominated by goal-directed search with high stakes—users are making accommodation decisions that significantly impact their trips and involve substantial money. The platform must address trust concerns (Is this place as described?), uncertainty (Will it meet my needs?), and risk aversion (What if something goes wrong?) while facilitating confident decision-making.\n\nThe extensive filtering and detailed information serve psychological needs for control and certainty. Users can specify requirements precisely, reducing anxiety about booking something unsuitable. Reviews and ratings provide social proof, essential for trust in peer-to-peer transactions. Host profiles and response rates address concerns about communication and reliability. Photos and detailed descriptions reduce surprises. This transparency creates psychological safety that enables transactions between strangers.\n\nHowever, the abundance of choice and detailed information can create decision paralysis. With hundreds of options meeting their criteria, users may struggle to commit, constantly wondering if a better option exists. The map view, while useful, can make the search feel overwhelming by visualizing just how many choices exist. Airbnb balances this with trust signals (Superhost, Guest Favorite) and sorting options that help narrow choices. The platform designs for serendipity less than goal achievement—users rarely stumble upon a booking; they methodically search and evaluate until confident.',
 		screenshots: [
@@ -247,20 +262,6 @@ export const analysisContent: AnalysisContent[] = [
 				alt: 'Airbnb user psychology',
 				thumbnail: '/Search/Airbnb/Airbnb (iOS).png',
 				annotation: 'High-stakes decisions require control and certainty. Extensive filtering addresses anxiety about booking something unsuitable. Reviews and host profiles provide trust in peer-to-peer transactions. Photos and descriptions reduce surprises. Abundance of choice can create paralysis.'
-			}
-		]
-	},
-	{
-		appId: 'airbnb',
-		dimensionId: 'agency-nudging',
-		keyInsight: 'User agency with conversion nudges',
-		analysis: 'Airbnb provides substantial user agency—perhaps more than any mainstream consumer platform. Users control nearly every aspect of discovery: search criteria, filters, sorting, map browsing, and saved searches. The platform rarely imposes recommendations without user initiation. This agency is necessary for the high-stakes nature of accommodation booking; users need to feel in control when making expensive, consequential decisions.\n\nHowever, Airbnb employs sophisticated nudging within this user-controlled framework. Search rankings aren\'t purely objective—they weight factors like booking likelihood, host quality, and platform priorities. "Limited availability" messages and "booking soon" indicators create artificial urgency. "Guest favorite" and "Superhost" badges guide choices toward platform-preferred listings. Dynamic pricing highlights like "25% off" frame decisions around perceived deals. These nudges operate within user-defined parameters but influence which options rise to attention.\n\nThe result is a browsing experience that feels empowering—users believe they\'re making independent, well-informed decisions—while still being subtly guided toward outcomes favorable to Airbnb. The platform doesn\'t override user intention but shapes the choice environment to favor certain decisions. Users rarely feel manipulated because the agency is genuine in most respects, but the platform still structures discovery to optimize conversions. This sophisticated balance maintains trust while serving business goals, recognizing that in high-stakes decisions, too much overt nudging undermines confidence and reduces conversions.',
-		screenshots: [
-			{
-				src: '/Search/Airbnb/Airbnb (iOS).png',
-				alt: 'Airbnb agency and nudging',
-				thumbnail: '/Search/Airbnb/Airbnb (iOS).png',
-				annotation: 'Substantial user control over search, filters, sorting, map browsing. Platform rarely imposes recommendations without user initiation. But rankings weight booking likelihood, "booking soon" creates urgency, badges guide toward platform-preferred listings. Nudges within user-controlled framework.'
 			}
 		]
 	}

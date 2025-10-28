@@ -25,12 +25,29 @@ export default function SearchPage() {
 
 			{/* Main Content */}
 			<div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 lg:py-16">
-				{/* View Description */}
-				<div className="mb-8">
-					<p className="text-neutral-600 text-base">
-						Compare how all three platforms approach each aspect of search and discovery.
-						Click on a dimension below to expand the analysis and switch between apps.
-					</p>
+				{/* Comparative Summary */}
+				<div className="mb-12 bg-white rounded-lg border border-neutral-200 p-8">
+					<h2 className="text-2xl font-semibold text-neutral-900 mb-4">
+						Summary
+					</h2>
+					<div className="space-y-4 text-neutral-600 leading-relaxed">
+						<p>
+							These three platforms reveal distinct philosophies for helping users find what they want.
+							<strong> Netflix guides users toward recommended content</strong> through algorithmic curation and visual discovery patterns,
+							optimizing for engagement time through personalized "For You" feeds and category browsing.
+							<strong> YouTube prioritizes user control</strong> with a prominent search-first interface, voice input, and substantial filtering options,
+							while still surfacing algorithmic suggestions on the home feed where most engagement happens.
+							<strong> Airbnb flips the model</strong> by putting structured user agency first, with beautifully designed filters for Where/When/Who
+							that empower users to convert interest directly into bookings.
+						</p>
+						<p>
+							The fundamental tension across all three: how much to <em>guide</em> versus how much to <em>empower</em>?
+							Netflix assumes users want recommendations and fine-tunes their suggestions.
+							YouTube supports users who may search, browse, or follow creators across all three modes.
+							Airbnb assumes users have clear needs and need tools to express them confidently.
+							Each reflects its business model: engagement time, ad inventory, and conversion confidence.
+						</p>
+					</div>
 				</div>
 
 				{/* Dimension Accordion View */}
@@ -38,7 +55,7 @@ export default function SearchPage() {
 					dimensions={dimensions}
 					apps={apps}
 					analysisContent={analysisContent}
-					defaultValue="discovery-patterns"
+					defaultValue="user-control-platform-control"
 				/>
 			</div>
 
